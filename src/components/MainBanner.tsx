@@ -38,7 +38,12 @@ export default function MainBanner() {
           className="w-full h-full object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-[500px] white-overlay" />
-        <div className="absolute top-0 w-full flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="absolute top-0 w-full flex flex-col items-center"
+        >
           <div className="mt-[170px] whitespace-pre-wrap text-center text-[66px] font-bold leading-[1.4]">
             {"금융의 모든 것\n토스에서 쉽고 간편하게"}
           </div>
@@ -68,7 +73,7 @@ export default function MainBanner() {
               Google Play
             </a>
           </div>
-        </div>
+        </motion.div>
         <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 h-[50px] w-[50px]">
           <motion.div
             animate={{
