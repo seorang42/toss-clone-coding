@@ -74,7 +74,12 @@ export default function MainBanner() {
             </a>
           </div>
         </motion.div>
-        <div className="absolute bottom-[30px] left-1/2 -translate-x-1/2 h-[50px] w-[50px]">
+        <div
+          onClick={() => {
+            scrollTo({ top: window.innerHeight - 60, behavior: "smooth" });
+          }}
+          className="absolute bottom-[30px] left-1/2 -translate-x-1/2 h-[50px] w-[50px]"
+        >
           <motion.div
             animate={{
               y: [-20, 0, 0, -10, 0, -20],
