@@ -6,7 +6,7 @@ import { ScrollIcon } from "@/components/icons";
 export default function MainBanner() {
   return (
     <div>
-      <nav className="w-full h-[60px] fixed z-50 flex justify-center bg-white">
+      <nav className="w-full h-[60px] fixed left-0 top-0 z-50 flex justify-center bg-white">
         <div className="w-full h-full max-w-[1140px] flex justify-center">
           <div className="w-[92%] flex justify-between">
             <div className="flex shrink-0 items-center">
@@ -35,14 +35,14 @@ export default function MainBanner() {
           alt="배너"
           fill
           unoptimized
-          className="w-full h-full object-cover"
+          className="object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-[500px] white-overlay" />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="absolute top-0 w-full flex flex-col items-center"
+          className="absolute top-0 left-0 w-full flex flex-col items-center"
         >
           <div className="mt-[170px] whitespace-pre-wrap text-center text-[66px] font-bold leading-[1.4]">
             {"금융의 모든 것\n토스에서 쉽고 간편하게"}
