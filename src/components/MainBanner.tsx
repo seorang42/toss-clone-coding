@@ -5,7 +5,7 @@ import { ScrollIcon } from "@/components/icons";
 
 export default function MainBanner() {
   return (
-    <div>
+    <div className="w-full">
       <nav className="w-full h-[60px] fixed left-0 top-0 z-50 flex justify-center bg-white">
         <div className="w-full h-full max-w-[1140px] flex justify-center">
           <div className="w-[92%] flex justify-between">
