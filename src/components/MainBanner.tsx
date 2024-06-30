@@ -78,7 +78,7 @@ export default function MainBanner() {
           onClick={() => {
             scrollTo({ top: window.innerHeight - 60, behavior: "smooth" });
           }}
-          className="absolute bottom-[30px] left-1/2 -translate-x-1/2 h-[50px] w-[50px]"
+          className="absolute bottom-[30px] left-1/2 -translate-x-1/2 h-[50px] w-[50px] cursor-pointer"
         >
           <motion.div
             animate={{
