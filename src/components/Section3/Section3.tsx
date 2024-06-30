@@ -1,6 +1,7 @@
 import { ClockIcon, ShieldIcon, WonIcon } from "../icons";
 import { motion } from "framer-motion";
 import TextBox from "./TextBox";
+import TitleBox from "../TitleBox";
 
 export default function Section3() {
   const contentVariants = {
@@ -21,10 +22,12 @@ export default function Section3() {
             variants={contentVariants}
             transition={{ type: "tween", duration: 0.5 }}
           >
-            <h2 className="text-toss-blue font-semibold text-[26px]">송금</h2>
-            <h2 className="whitespace-pre-wrap text-5xl font-semibold leading-normal">
-              {"간편하고 안전하게\n수수료는 평생 무료로\n이런 송금 써보셨나요?"}
-            </h2>
+            <TitleBox
+              category="송금"
+              content={
+                "간편하고 안전하게\n수수료는 평생 무료로\n이런 송금 써보셨나요?"
+              }
+            />
           </motion.div>
           <TextBox
             icon={<WonIcon />}

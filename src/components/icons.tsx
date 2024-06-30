@@ -57,7 +57,7 @@ export function ShieldIcon() {
 export function ClockIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <g fill-rule="evenodd" clip-rule="evenodd">
+      <g fillRule="evenodd" clipRule="evenodd">
         <path
           d="M12 2.5c-5.2 0-9.5 4.3-9.5 9.5s4.3 9.5 9.5 9.5 9.5-4.3 9.5-9.5-4.3-9.5-9.5-9.5m0 21C5.7 23.5.5 18.3.5 12S5.7.5 12 .5 23.5 5.7 23.5 12 18.3 23.5 12 23.5"
           fill="#afb7c0"

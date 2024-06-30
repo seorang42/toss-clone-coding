@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import TitleBox from "./TitleBox";
 
 export default function Section2() {
   const contentVariants = {
@@ -22,10 +23,10 @@ export default function Section2() {
           className="mt-[250px] gap-[30px] flex flex-col"
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <h2 className="text-3xl font-semibold text-toss-blue">홈 · 소비</h2>
-          <h2 className="text-5xl font-semibold whitespace-pre-wrap leading-normal">
-            {"내 돈 관리,\n지출부터 일정까지\n똑똑하게"}
-          </h2>
+          <TitleBox
+            category="홈 · 소비"
+            content={"내 돈 관리,\n지출부터 일정까지\n똑똑하게"}
+          />
         </motion.div>
         <div className="absolute w-full max-h-[1000px] h-full -z-10 top-[250px] overflow-hidden">
           <motion.div
@@ -38,7 +39,7 @@ export default function Section2() {
               alt="img1-1"
             />
             <img
-              className="w-[342px] h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"
+              className="screen-img"
               src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_01.png"
               alt="img1-2"
             />
@@ -54,7 +55,7 @@ export default function Section2() {
             alt="img2-1"
           />
           <img
-            className="w-[342px] h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"
+            className="screen-img"
             src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_02.png"
             alt="img2-2"
           />
@@ -64,7 +65,7 @@ export default function Section2() {
           className="absolute bottom-[331px] right-[30px]"
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <h2 className="whitespace-pre-wrap text-[22px] font-medium leading-normal">
+          <h2 className="whitespace-pre-wrap text-2xl font-medium leading-normal text-gray-700">
             {
               "토스에 계좌와 카드를 연결해 보세요.\n계좌 잔액, 대출 · 투자 내역은 기본,\n일자별 소비와 수입까지 한 번에 볼 수 있어요."
             }
