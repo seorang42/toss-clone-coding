@@ -1,7 +1,30 @@
+import { useEffect, useState } from "react";
 import TitleBox from "./TitleBox";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Section4() {
+  const img = [
+    "https://static.toss.im/assets/homepage/newtossim/section1_3_loan_01.png",
+    "https://static.toss.im/assets/homepage/newtossim/section1_3_loan_02.png",
+    "https://static.toss.im/assets/homepage/newtossim/section1_3_loan_03.png",
+  ];
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (counter === 0 || counter === 1) {
+      interval = setInterval(() => {
+        setCounter((prev) => (prev + 1) % img.length);
+      }, 3000);
+    } else if (counter === 2) {
+      interval = setInterval(() => {
+        setCounter((prev) => (prev + 1) % img.length);
+      }, 4000);
+    }
+
+    return () => clearInterval(interval);
+  }, [counter]);
+
   return (
     <section className="w-full flex justify-center py-[250px]">
       <div className="w-full max-w-[1140px] flex justify-center relative">
@@ -29,32 +52,40 @@ export default function Section4() {
             }
           </span>
         </div>
-        <div className="absolute right-0 -mr-[60px] -mt-[55px] -z-10">
-          <motion.div>
+        <div className="absolute right-0 -z-10 overflow-hidden">
+          <div className="-mr-[60px] -mt-[55px] relative">
+            <AnimatePresence>
+              <motion.img
+                className="screen-img"
+                key={counter}
+                src={img[counter]}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              />
+            </AnimatePresence>
             <img
-              className="screen-img"
-              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_01.png"
+              className="w-[600px] h-fit"
+              src="https://static.toss.im/screens/iPhone12_Clay_Shadow.png"
             />
-          </motion.div>
-          <motion.div>
-            <img
-              className="screen-img"
-              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_02.png"
-            />
-          </motion.div>
-          <motion.div>{/* animation 3s 3s 4s */}</motion.div>
-          <motion.div>
-            <img
-              className="screen-img"
-              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_03.png"
-            />
-          </motion.div>
-          <img
-            className="w-[600px] h-fit"
-            src="https://static.toss.im/screens/iPhone12_Clay_Shadow.png"
-          />
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+/* <motion.div>
+            <img
+              className="screen-img"
+              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_02.png"
+            />
+          </motion.div>
+          <motion.div>{/* animation 3s 3s 4s }</motion.div>
+          <motion.div>
+            <img
+              className="screen-img"
+              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_03.png"
+            />
+          </motion.div> */
