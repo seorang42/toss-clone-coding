@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import TitleBox from "./TitleBox";
 import { AnimatePresence, motion } from "framer-motion";
+import TitleBox from "../TitleBox";
+import Circle from "./Circle";
 
 export default function Section4() {
   const img = [
@@ -9,20 +10,45 @@ export default function Section4() {
     "https://static.toss.im/assets/homepage/newtossim/section1_3_loan_03.png",
   ];
   const [counter, setCounter] = useState(0);
+  const [sliderCounter, setSliderCounter] = useState(0);
+  const slider = [
+    { id: 0, bgColor: "#d98880", content: "" },
+    { id: 1, bgColor: "#d98880", content: "삼" },
+    { id: 2, bgColor: "#eb984e", content: "우" },
+    { id: 3, bgColor: "#44b29d", content: "신" },
+    { id: 4, bgColor: "#f4cf40", content: "국" },
+    { id: 5, bgColor: "#e74c3c", content: "하" },
+    { id: 6, bgColor: "#8d44ad", content: "카" },
+    { id: 7, bgColor: "#57d68c", content: "농" },
+    { id: 8, bgColor: "#5cade2", content: "우" },
+    { id: 9, bgColor: "#d35400", content: "" },
+  ];
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    if (counter === 0 || counter === 1) {
+    let sliderInterval: NodeJS.Timeout;
+    if (counter === 0) {
       interval = setInterval(() => {
         setCounter((prev) => (prev + 1) % img.length);
       }, 3000);
+    } else if (counter === 1) {
+      interval = setInterval(() => {
+        setCounter((prev) => (prev + 1) % img.length);
+      }, 4000);
+      setSliderCounter(0);
+      sliderInterval = setInterval(() => {
+        setSliderCounter((prev) => prev + 1);
+      }, 2000);
     } else if (counter === 2) {
       interval = setInterval(() => {
         setCounter((prev) => (prev + 1) % img.length);
       }, 4000);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearInterval(sliderInterval);
+    };
   }, [counter]);
 
   return (
@@ -64,6 +90,27 @@ export default function Section4() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               />
+              {counter === 1 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-[342px] h-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden"
+                >
+                  <div className="w-[382px] h-full flex items-center gap-6 -ml-[40px]">
+                    {slider.map((el) => (
+                      <Circle
+                        key={el.id}
+                        id={el.id}
+                        bgColor={el.bgColor}
+                        content={el.content}
+                        counter={sliderCounter}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              )}
             </AnimatePresence>
             <img
               className="w-[600px] h-fit"
@@ -75,17 +122,3 @@ export default function Section4() {
     </section>
   );
 }
-
-/* <motion.div>
-            <img
-              className="screen-img"
-              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_02.png"
-            />
-          </motion.div>
-          <motion.div>{/* animation 3s 3s 4s }</motion.div>
-          <motion.div>
-            <img
-              className="screen-img"
-              src="https://static.toss.im/assets/homepage/newtossim/section1_3_loan_03.png"
-            />
-          </motion.div> */
