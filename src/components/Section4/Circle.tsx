@@ -10,10 +10,16 @@ interface ICircle {
 export default function Circle({ id, counter, bgColor, content }: ICircle) {
   return (
     <motion.div
-      animate={{ x: -64 * (counter + 1), scale: id === counter + 4 ? 1.5 : 1 }}
+      animate={{
+        x: -64 * (counter + 1),
+        scale: id === counter + 4 ? 1.5 : 1,
+      }}
       transition={{ repeat: Infinity, repeatDelay: 2, type: "tween" }}
       className="relative w-10 h-10 rounded-full shrink-0 flex justify-center items-center font-black text-white text-lg"
-      style={{ backgroundColor: bgColor }}
+      style={{
+        backgroundColor: bgColor,
+        opacity: id === counter + 4 ? 1 : 0.8,
+      }}
     >
       {content}
       {id === counter + 4 && (
