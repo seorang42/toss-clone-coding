@@ -51,34 +51,71 @@ export default function Section4() {
     };
   }, [counter]);
 
+  const contentVariants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <section className="w-full flex justify-center py-[250px]">
-      <div className="w-full max-w-[1140px] flex justify-center relative">
-        <div className="w-[92%] flex flex-col">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          staggerChildren: 0.5,
+        }}
+        className="w-full h-full max-w-[1140px] flex justify-center relative"
+      >
+        <motion.div
+          variants={contentVariants}
+          className="w-[92%] flex flex-col"
+          transition={{ type: "tween", duration: 0.5 }}
+        >
           <div className="flex flex-col gap-[20px]">
             <TitleBox
               category="대출"
               content={"여러 은행의 조건을\n1분 만에\n확인해보세요"}
             />
           </div>
-          <span className="mt-[210px] text-5xl font-semibold leading-normal">
+          <motion.span
+            variants={contentVariants}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            className="mt-[210px] text-5xl font-semibold leading-normal"
+          >
             한도는 높게,
-          </span>
-          <span className="text-5xl font-semibold leading-normal">
+          </motion.span>
+          <motion.span
+            variants={contentVariants}
+            transition={{ delay: 2, duration: 0.5 }}
+            className="text-5xl font-semibold leading-normal"
+          >
             금리는{` `}
             <span className="text-gray-400">낮게,</span>
-          </span>
-          <span className="text-5xl font-semibold leading-normal">
+          </motion.span>
+          <motion.span
+            variants={contentVariants}
+            transition={{ delay: 2.5, duration: 0.5 }}
+            className="text-5xl font-semibold leading-normal"
+          >
             부담은{` `}
             <span className="text-gray-300">적게.</span>
-          </span>
-          <span className="whitespace-pre-wrap text-2xl font-medium leading-normal text-gray-700 mt-[30px]">
+          </motion.span>
+          <motion.span
+            variants={contentVariants}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="whitespace-pre-wrap text-2xl font-medium leading-normal text-gray-700 mt-[30px]"
+          >
             {
               "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."
             }
-          </span>
-        </div>
-        <div className="absolute right-0 -z-10 overflow-hidden">
+          </motion.span>
+        </motion.div>
+        <motion.div
+          variants={contentVariants}
+          className="absolute right-0 -z-10 overflow-hidden"
+          transition={{ type: "tween", duration: 0.5 }}
+        >
           <div className="-mr-[60px] -mt-[55px] relative">
             <AnimatePresence>
               <motion.img
@@ -117,8 +154,8 @@ export default function Section4() {
               src="https://static.toss.im/screens/iPhone12_Clay_Shadow.png"
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
