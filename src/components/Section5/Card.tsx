@@ -12,7 +12,7 @@ export default function Card({ img, title, content, variants }: ICard) {
     <div className="flex flex-col grow h-[400px] pr-[30px] pb-[30px]">
       <motion.div
         variants={variants}
-        transition={{ delay: 1.2, duration: 0.5 }}
+        transition={{ delay: 1.3, duration: 0.5 }}
       >
         <img className="w-[120px] h-fit mb-[30px]" src={img} />
       </motion.div>
