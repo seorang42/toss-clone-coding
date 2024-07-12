@@ -16,7 +16,10 @@ export default function Section6() {
   ];
 
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"],
+  });
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -30,7 +33,7 @@ export default function Section6() {
   };
 
   return (
-    <section className="w-full flex justify-center py-[250px]">
+    <section className="w-full flex justify-center py-[250px] overflow-hidden">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
           className="w-[92%] flex flex-col"
