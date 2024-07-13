@@ -8,6 +8,7 @@ import Section4 from "@/components/Section4/Section4";
 import Section5 from "@/components/Section5/Section5";
 import Section6 from "@/components/Section6";
 import Section7 from "@/components/Section7";
+import Section8 from "@/components/Section8";
 import TopBar from "@/components/TopBar";
 import { useEffect } from "react";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Section5 />
       <Section6 />
       <Section7 />
+      <Section8 />
     </div>
   );
 }
