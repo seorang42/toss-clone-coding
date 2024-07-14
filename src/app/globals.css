@@ -21,7 +21,7 @@ body {
 
 @layer components {
   .navbar-button {
-    @apply p-3 rounded-lg font-normal text-sm text-gray-500 hover:bg-gray-100 cursor-pointer;
+    @apply p-3 rounded-lg font-normal text-sm text-gray-500 hover:bg-gray-50 cursor-pointer;
   }
   .screen-img {
     @apply w-[342px] h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10;

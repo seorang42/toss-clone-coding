@@ -36,7 +36,7 @@ export default function Section5() {
   ];
 
   return (
-    <section className="w-full flex justify-center bg-gray-100 py-[250px]">
+    <section className="w-full flex justify-center bg-gray-50 py-[250px]">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
           className="w-[92%] flex flex-col "
