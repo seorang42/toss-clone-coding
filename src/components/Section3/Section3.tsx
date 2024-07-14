@@ -15,7 +15,7 @@ export default function Section3() {
           className="w-[92%] flex flex-col "
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.15 }}
         >
           <motion.div
             className="flex flex-col gap-[30px]"

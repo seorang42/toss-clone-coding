@@ -6,6 +6,7 @@ import {
   TossPrimeIcon,
 } from "../icons";
 import Card from "./Card";
+import { motion } from "framer-motion";
 
 export default function Section9() {
   const cardList = [
@@ -38,17 +39,36 @@ export default function Section9() {
         "카드 없이 휴대전화만 챙겨 나와도 됩니다.\n토스앱만 있다면 근처 ATM에서 현금을 찾을 수\n있어요.",
     },
   ];
+
+  const contentVariants = {
+    hidden: { y: 60, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <section className="w-full flex justify-center bg-gray-50">
       <div className="w-full max-w-[1140px] flex justify-center py-[250px]">
-        <div className="w-[92%] flex flex-col">
-          <div className="flex flex-col gap-5">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.06 }}
+          className="w-[92%] flex flex-col"
+        >
+          <motion.div
+            variants={contentVariants}
+            transition={{ type: "tween", duration: 0.5 }}
+            className="flex flex-col gap-5"
+          >
             <TitleBox
               category="알면 좋은 금융"
               content={"이런 서비스도\n한번 써보세요"}
             />
-          </div>
-          <div className="flex flex-wrap mt-[100px] -mr-[200px] -mb-[100px]">
+          </motion.div>
+          <motion.div
+            variants={contentVariants}
+            transition={{ type: "tween", duration: 0.5, delay: 0.5 }}
+            className="flex flex-wrap mt-[100px] -mr-[200px] -mb-[100px]"
+          >
             {cardList.map((el, index) => (
               <Card
                 key={index}
@@ -58,8 +78,8 @@ export default function Section9() {
                 content={el.content}
               />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
