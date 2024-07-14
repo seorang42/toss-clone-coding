@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import TitleBox from "./TitleBox";
 import { useEffect, useRef, useState } from "react";
 
@@ -20,12 +20,9 @@ export default function Section6() {
     target: ref,
     offset: ["start end", "end end"],
   });
-  const [progress, setProgress] = useState(0);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setProgress(scrollYProgress.get());
-    });
-  }, []);
+  const firstBoxes = useTransform(scrollYProgress, [0.77, 0.86], [0, 1]);
+  const secondBoxes = useTransform(scrollYProgress, [0.86, 0.92], [0, 1]);
+  const thirdBoxes = useTransform(scrollYProgress, [0.92, 1], [0, 1]);
 
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
@@ -87,22 +84,15 @@ export default function Section6() {
                 if (Math.abs(index - 3) === 0) {
                   newProgress = 1;
                 } else if (Math.abs(index - 3) === 1) {
-                  if (progress - 0.3 > 0) {
-                    newProgress = (progress - 0.3) / 0.4;
-                  }
+                  newProgress = firstBoxes;
                 } else if (Math.abs(index - 3) === 2) {
-                  if (progress - 0.7 > 0) {
-                    newProgress = (progress - 0.7) / 0.2;
-                  }
+                  newProgress = secondBoxes;
                 } else if (Math.abs(index - 3) === 3) {
-                  if (progress - 0.9 > 0) {
-                    newProgress = (progress - 0.9) / 0.1;
-                  }
+                  newProgress = thirdBoxes;
                 }
                 return (
                   <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: newProgress }}
+                    style={{ opacity: newProgress }}
                     key={index}
                     className="w-[178px] h-[178px]"
                     src={el}
