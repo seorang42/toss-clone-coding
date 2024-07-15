@@ -2,6 +2,7 @@
 
 import MainBanner from "@/components/MainBanner";
 import Section1 from "@/components/Section1";
+import Section10 from "@/components/Section10/Section10";
 import Section2 from "@/components/Section2";
 import Section3 from "@/components/Section3/Section3";
 import Section4 from "@/components/Section4/Section4";
@@ -34,6 +35,7 @@ export default function Home() {
       <Section7 />
       <Section8 />
       <Section9 />
+      <Section10 />
     </div>
   );
 }

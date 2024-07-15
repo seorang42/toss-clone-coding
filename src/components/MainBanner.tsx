@@ -25,7 +25,7 @@ export default function MainBanner() {
         </div>
         <div className="flex gap-1 mt-[50px]">
           <a
-            href="#"
+            href="/"
             className="px-4 py-3 bg-black bg-opacity-80 text-white flex gap-2 rounded-lg"
           >
             <Image
@@ -37,7 +37,7 @@ export default function MainBanner() {
             App Store
           </a>
           <a
-            href="#"
+            href="/"
             className="px-4 py-3 bg-black bg-opacity-80 text-white flex gap-2 rounded-lg"
           >
             <Image
