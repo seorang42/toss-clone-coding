@@ -9,7 +9,7 @@ export default function Section7() {
   });
   const scaleX = useTransform(scrollYProgress, [0, 1], [1, 0]);
   return (
-    <div ref={ref} className="w-full pb-[170px]">
+    <div ref={ref} className="w-full pb-[170px] overflow-hidden">
       <div
         className="w-full h-[800px] bg-no-repeat flex justify-center items-center relative"
         style={{

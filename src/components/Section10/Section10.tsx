@@ -67,8 +67,9 @@ export default function Section10() {
         transition={{ duration: 0.5, type: "tween" }}
         className="w-full flex lg:gap-5 max-sm:gap-20 px-12 max-sm:px-6 justify-center max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1"
       >
-        {cardList.map((el) => (
+        {cardList.map((el, index) => (
           <Card
+            key={index}
             title={el.title}
             content={el.content}
             btnText={el.btnText}

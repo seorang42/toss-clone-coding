@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import MainBanner from "@/components/MainBanner";
 import Section1 from "@/components/Section1";
 import Section10 from "@/components/Section10/Section10";
@@ -36,6 +37,7 @@ export default function Home() {
       <Section8 />
       <Section9 />
       <Section10 />
+      <Footer />
     </div>
   );
 }
