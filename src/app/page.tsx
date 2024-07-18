@@ -16,12 +16,12 @@ import TopBar from "@/components/TopBar";
 import { useEffect } from "react";
 
 export default function Home() {
-  const scrollToTop = () => {
+  const useScrollToTop = () => {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
   };
-  scrollToTop();
+  useScrollToTop();
 
   return (
     <div className="flex flex-col w-screen items-center">
