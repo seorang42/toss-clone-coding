@@ -26,7 +26,7 @@ export default function MainBanner() {
         <div className="flex gap-1 mt-[50px]">
           <a
             href="/"
-            className="px-4 py-3 bg-black bg-opacity-80 text-white flex gap-2 rounded-lg"
+            className="px-4 py-3 bg-black bg-opacity-75 text-white flex gap-2 rounded-lg"
           >
             <Image
               src="https://static.toss.im/png-icons/timeline/applekorea.png"
@@ -38,7 +38,7 @@ export default function MainBanner() {
           </a>
           <a
             href="/"
-            className="px-4 py-3 bg-black bg-opacity-80 text-white flex gap-2 rounded-lg"
+            className="px-4 py-3 bg-black bg-opacity-75 text-white flex gap-2 rounded-lg"
           >
             <Image
               src="https://static.toss.im/png-icons/timeline/googleplay.png"
