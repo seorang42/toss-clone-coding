@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import TitleBox from "./TitleBox";
+import { useEffect, useRef, useState } from "react";
 
 export default function Section2() {
   const contentVariants = {
@@ -7,11 +8,32 @@ export default function Section2() {
     visible: { y: 0, opacity: 1 },
   };
 
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"],
+  });
+  const moveX = useTransform(scrollYProgress, [0.8, 1], [25, -25]);
+
+  const [isScreenSm, setIsScreenSm] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setIsScreenSm(false);
+      } else {
+        setIsScreenSm(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="w-full overflow-hidden flex justify-center">
-      <div className="w-full sm:h-[1687px] max-w-[1140px] flex justify-center max-sm:py-[100px]">
+      <div className="w-full sm:h-[1687px] max-w-[1140px] flex justify-center">
         <motion.div
-          className="responsive-width h-full relative"
+          ref={ref}
+          className="responsive-width h-full relative max-sm:py-[100px]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -29,7 +51,10 @@ export default function Section2() {
               content={"내 돈 관리,\n지출부터 일정까지\n똑똑하게"}
             />
           </motion.div>
-          <div className="max-sm:relative max-sm:h-[587px] max-sm:flex max-sm:justify-center">
+          <motion.div
+            style={{ translateX: isScreenSm ? moveX : 0 }}
+            className="max-sm:relative max-sm:h-[587px] max-sm:flex max-sm:justify-center"
+          >
             <motion.div
               variants={contentVariants}
               className="max-sm:relative absolute w-[600px] sm:-right-[104px] sm:top-[250px] shrink-0 -z-10 max-sm:h-full max-sm:w-fit"
@@ -62,7 +87,7 @@ export default function Section2() {
                 alt="img2-2"
               />
             </motion.div>
-          </div>
+          </motion.div>
           <motion.div
             variants={contentVariants}
             className="sm:absolute sm:bottom-[331px] sm:right-[30px]"
