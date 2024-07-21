@@ -18,9 +18,7 @@ export default function Card({ icon, bgColor, title, content }: ICard) {
       </div>
       <div className="flex flex-col gap-[6px]">
         <span className="text-[20px] font-medium text-gray-700">{title}</span>
-        <span className="whitespace-pre-wrap text-gray-400 leading-[1.6] text-lg">
-          {content}
-        </span>
+        <span className="text-gray-400 leading-[1.6] text-lg">{content}</span>
       </div>
     </div>
   );

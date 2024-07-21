@@ -17,7 +17,7 @@ export default function Card({ img, title, content, variants }: ICard) {
         <img className="w-[120px] h-fit mb-[30px]" src={img} />
       </motion.div>
       <span className="font-semibold text-[28px] text-gray-700">{title}</span>
-      <span className="mt-[10px] text-[22px] text-gray-500 font-medium whitespace-pre-wrap break-words grow">
+      <span className="mt-[10px] text-[22px] text-gray-500 font-medium break-words grow">
         {content}
       </span>
     </div>

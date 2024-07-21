@@ -12,7 +12,7 @@ export default function Card({ title, content, btnText, link }: ICard) {
   return (
     <div className="w-full flex flex-col max-w-[300px] max-lg:mb-[80px] max-sm:mb-0">
       <span className="text-[30px] text-white font-semibold mb-3">{title}</span>
-      <span className="text-gray-400 text-[20px] leading-[1.6] font-medium whitespace-pre-wrap break-keep mb-[38px]">
+      <span className="text-gray-400 text-[20px] leading-[1.6] font-medium mb-[38px]">
         {content}
       </span>
       <button

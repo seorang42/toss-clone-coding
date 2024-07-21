@@ -64,14 +64,14 @@ export default function Section6() {
               <motion.span
                 variants={contentVariants}
                 transition={{ duration: 0.5 }}
-                className="whitespace-pre-wrap text-[23px] font-medium"
+                className="text-[23px] font-medium"
               >
                 {"이해하기 쉬운 용어\n설명이 필요 없는\n직관적인 화면 구성"}
               </motion.span>
               <motion.span
                 variants={contentVariants}
                 transition={{ duration: 0.5 }}
-                className="whitespace-pre-wrap text-[23px] font-medium"
+                className="text-[23px] font-medium"
               >
                 {
                   "송금처럼 쉬운 구매 경험\n그리고 투자 판단에\n도움을 주는 콘텐츠까지"
@@ -102,7 +102,7 @@ export default function Section6() {
               })}
             </div>
           </div>
-          <span className="mt-3 text-center whitespace-pre-wrap text-[23px] font-medium">
+          <span className="mt-3 text-center text-[23px] font-medium">
             {
               "별도 앱 설치 없이 토스에서 바로,\n토스증권으로 나만의 투자를 시작해 보세요."
             }

@@ -96,7 +96,7 @@ export default function Footer() {
                 <a
                   key={index}
                   href="/"
-                  className="flex items-center w-full min-h-[30px] break-keep whitespace-pre-wrap leading-[30px] text-[15px] text-gray-500 hover:underline"
+                  className="flex items-center w-full min-h-[30px] leading-[30px] text-[15px] text-gray-500 hover:underline"
                 >
                   {el}
                 </a>
@@ -108,7 +108,7 @@ export default function Footer() {
           <span className="w-full h-9 text-gray-400 font-semibold text-[15px]">
             ㈜비바리퍼블리카
           </span>
-          <div className="w-full flex flex-col text-[13px] text-gray-500 whitespace-pre-wrap break-keep">
+          <div className="w-full flex flex-col text-[13px] text-gray-500 ">
             <span>사업자 등록번호 : 120-88-01280 | 대표 : 이승건</span>
             <span>
               호스팅 서비스 : 주식회사 비바리퍼블리카 | 통신판매업 신고번호 :
@@ -132,7 +132,7 @@ export default function Footer() {
             <a
               key={index}
               href="/"
-              className={`w-fit text-[13px] hover:underline leading-[18px] break-keep whitespace-pre-wrap ${
+              className={`w-fit text-[13px] hover:underline leading-[18px] ${
                 el.isBright ? "text-gray-400" : "text-gray-600"
               }`}
             >

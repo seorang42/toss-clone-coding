@@ -21,17 +21,16 @@ export default function MainBanner() {
         className="absolute top-0 left-0 w-full flex flex-col items-center"
       >
         <div className="mt-[170px] max-sm:mt-[100px] flex flex-col gap-[50px] max-sm:gap-5 items-center">
-          <div className="max-sm:hidden w-full whitespace-pre-wrap break-keep text-center text-[66px] max-sm:text-[33px] font-bold leading-[1.4]">
-            {"금융의 모든 것\n토스에서 쉽고 간편하게"}
-          </div>
-          <div className="sm:hidden w-full whitespace-pre-wrap break-keep text-center text-[66px] max-sm:text-[33px] font-semibold leading-[1.4]">
-            {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
+          <div className="w-full text-center text-[66px] max-sm:text-[33px] font-bold leading-[1.4]">
+            <span className="max-sm:hidden">
+              {"금융의 모든 것\n토스에서 쉽고 간편하게"}
+            </span>
+            <span className="sm:hidden">
+              {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
+            </span>
           </div>
           <div className="flex gap-1">
-            <a
-              href="/"
-              className="pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px]"
-            >
+            <a href="/" className="appstore-button">
               <Image
                 src="https://static.toss.im/png-icons/timeline/applekorea.png"
                 alt="애플 로고"
@@ -40,10 +39,7 @@ export default function MainBanner() {
               />
               App Store
             </a>
-            <a
-              href="/"
-              className="pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px]"
-            >
+            <a href="/" className="appstore-button">
               <Image
                 src="https://static.toss.im/png-icons/timeline/googleplay.png"
                 alt="구글 로고"

@@ -15,7 +15,7 @@ export default function Part1() {
   const textOpacity = useTransform(scrollYProgress, [0.82, 1], [0, 1]);
   return (
     <div ref={ref} className="w-full mt-[80px] flex flex-col pb-[210px]">
-      <span className="whitespace-pre-wrap text-6xl font-semibold leading-[1.4]">
+      <span className="text-6xl font-semibold leading-[1.4]">
         {"토스로\n나에게 딱 맞게"}
       </span>
       <motion.img
@@ -25,7 +25,7 @@ export default function Part1() {
       />
       <motion.div
         style={{ translateY: textY, opacity: textOpacity }}
-        className="w-full flex flex-col gap-6 mt-[60px] whitespace-pre-wrap break-keep"
+        className="w-full flex flex-col gap-6 mt-[60px] "
       >
         <span className="flex gap-3 text-[40px] font-semibold">
           <span>내 문서함</span>

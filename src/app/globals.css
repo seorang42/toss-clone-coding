@@ -10,7 +10,7 @@
 
 body {
   white-space: nowrap;
-  @apply text-gray-900;
+  @apply text-gray-900 whitespace-pre-wrap break-keep;
 }
 
 @layer utilities {
@@ -24,7 +24,7 @@ body {
     @apply sm:px-2 sm:h-full flex items-center bg-white max-sm:w-full;
   }
   .navbar-button {
-    @apply sm:px-[10px] sm:py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
+    @apply whitespace-nowrap sm:px-[10px] sm:py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
   }
   .navbar-language-button {
     @apply px-[10px] py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
@@ -39,5 +39,8 @@ body {
       rgba(255, 255, 255, 1) 20%,
       rgba(255, 255, 255, 0) 100%
     );
+  }
+  .appstore-button {
+    @apply pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px];
   }
 }

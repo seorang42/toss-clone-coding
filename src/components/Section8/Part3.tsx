@@ -19,7 +19,7 @@ export default function Part3() {
       />
       <motion.div
         style={{ translateY: textY, opacity: textOpacity }}
-        className="flex whitespace-pre-wrap break-keep"
+        className="flex "
       >
         <div className="w-full flex flex-col grow">
           <span className="text-[40px] font-semibold">내 부동산 · 자동차</span>

@@ -104,7 +104,7 @@ export default function Section4() {
           <motion.span
             variants={contentVariants}
             transition={{ delay: 1, duration: 0.5 }}
-            className="whitespace-pre-wrap text-2xl font-medium leading-normal text-gray-700 mt-[30px]"
+            className="text-2xl font-medium leading-normal text-gray-700 mt-[30px]"
           >
             {
               "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."

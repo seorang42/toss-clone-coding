@@ -26,7 +26,7 @@ export default function TopBar() {
     <AnimatePresence initial={false}>
       <motion.nav
         animate={{ height: isMenuOpened ? "auto" : "60px" }}
-        transition={{ type: "tween", ease: "easeOut" }}
+        transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
         className={`w-full fixed left-0 top-0 z-50 flex justify-center bg-white overflow-hidden ${
           isScrolled && !isMenuOpened && "border-b border-[#E6E8EA]"
         }`}

@@ -36,13 +36,13 @@ export default function Part2() {
             className="flex flex-col gap-[6px]"
           >
             <span className="text-[40px] font-semibold">보험</span>
-            <span className="text-[40px] font-semibold text-gray-400 leading-[1.3] break-keep whitespace-pre-wrap">
+            <span className="text-[40px] font-semibold text-gray-400 leading-[1.3] ">
               {"조회부터 상담,\n병원비 돌려받기를 간편하게"}
             </span>
           </motion.div>
         </motion.div>
         <motion.div
-          className="flex flex-col gap-[35px] whitespace-pre-wrap mt-[122px]"
+          className="flex flex-col gap-[35px] mt-[122px]"
           style={{
             width: "calc((100% - 40px) / 3)",
             translateY: img2Y,

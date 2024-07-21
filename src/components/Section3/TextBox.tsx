@@ -30,10 +30,10 @@ export default function TextBox({
         <div className="relative w-6 h-6">{icon}</div>
         <h2 className="text-toss-blue text-xl">{iconText}</h2>
       </div>
-      <h2 className="mt-[10px] whitespace-pre-wrap text-[40px] font-semibold leading-normal break-keep">
+      <h2 className="mt-[10px] text-[40px] font-semibold leading-normal ">
         {title}
       </h2>
-      <h3 className="mt-[20px] whitespace-pre-wrap text-[22px] text-gray-500 font-medium break-keep">
+      <h3 className="mt-[20px] text-[22px] text-gray-500 font-medium ">
         {subText}
       </h3>
     </motion.div>
