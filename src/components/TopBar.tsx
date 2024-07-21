@@ -88,7 +88,7 @@ export default function TopBar() {
                     KOR
                   </a>
                 </li>
-                <li className="mt-[1px] w-1 h-4 text-gray-300 text-[11px] font-medium">
+                <li className="w-1 h-4 text-gray-300 center flex items-center">
                   |
                 </li>
                 <li className="sm:px-2 h-full flex items-center max-sm:hover:bg-gray-100">

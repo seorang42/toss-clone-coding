@@ -27,7 +27,7 @@ body {
     @apply sm:px-[10px] sm:py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
   }
   .navbar-language-button {
-    @apply px-3 py-[10px] rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
+    @apply px-[10px] py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
   }
   .screen-img {
     @apply w-[342px] h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10;

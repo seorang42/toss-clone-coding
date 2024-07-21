@@ -13,41 +13,46 @@ export default function MainBanner() {
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute top-0 left-0 w-full h-[500px] white-overlay" />
+      <div className="absolute top-0 left-0 w-full h-[500px] max-sm:h-[300px] white-overlay" />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.6 }}
         className="absolute top-0 left-0 w-full flex flex-col items-center"
       >
-        <div className="mt-[170px] whitespace-pre-wrap text-center text-[66px] font-bold leading-[1.4]">
-          {"금융의 모든 것\n토스에서 쉽고 간편하게"}
-        </div>
-        <div className="flex gap-1 mt-[50px]">
-          <a
-            href="/"
-            className="px-4 py-3 bg-black bg-opacity-75 text-white flex gap-2 rounded-lg"
-          >
-            <Image
-              src="https://static.toss.im/png-icons/timeline/applekorea.png"
-              alt="애플 로고"
-              width="24"
-              height="24"
-            />
-            App Store
-          </a>
-          <a
-            href="/"
-            className="px-4 py-3 bg-black bg-opacity-75 text-white flex gap-2 rounded-lg"
-          >
-            <Image
-              src="https://static.toss.im/png-icons/timeline/googleplay.png"
-              alt="구글 로고"
-              width="24"
-              height="24"
-            />
-            Google Play
-          </a>
+        <div className="mt-[170px] max-sm:mt-[100px] flex flex-col gap-[50px] max-sm:gap-5 items-center">
+          <div className="max-sm:hidden w-full whitespace-pre-wrap break-keep text-center text-[66px] max-sm:text-[33px] font-bold leading-[1.4]">
+            {"금융의 모든 것\n토스에서 쉽고 간편하게"}
+          </div>
+          <div className="sm:hidden w-full whitespace-pre-wrap break-keep text-center text-[66px] max-sm:text-[33px] font-semibold leading-[1.4]">
+            {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
+          </div>
+          <div className="flex gap-1">
+            <a
+              href="/"
+              className="pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px]"
+            >
+              <Image
+                src="https://static.toss.im/png-icons/timeline/applekorea.png"
+                alt="애플 로고"
+                width="24"
+                height="24"
+              />
+              App Store
+            </a>
+            <a
+              href="/"
+              className="pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px]"
+            >
+              <Image
+                src="https://static.toss.im/png-icons/timeline/googleplay.png"
+                alt="구글 로고"
+                width="24"
+                height="24"
+              />
+              Google Play
+            </a>
+          </div>
         </div>
       </motion.div>
       <div
