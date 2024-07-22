@@ -47,6 +47,6 @@ body {
     );
   }
   .appstore-button {
-    @apply pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px];
+    @apply pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px] whitespace-nowrap shrink-0;
   }
 }

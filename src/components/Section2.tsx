@@ -13,7 +13,12 @@ export default function Section2() {
     target: ref,
     offset: ["start end", "end end"],
   });
-  const moveX = useTransform(scrollYProgress, [0.8, 1], [25, -25]);
+  const transformPx = useTransform(
+    scrollYProgress,
+    [0.8, 1],
+    ["0px", "-650px"]
+  );
+  const transformVw = useTransform(scrollYProgress, [0.8, 1], ["0vw", "100vw"]);
 
   const [isScreenSm, setIsScreenSm] = useState(false);
   useEffect(() => {
@@ -24,6 +29,7 @@ export default function Section2() {
         setIsScreenSm(true);
       }
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -52,8 +58,11 @@ export default function Section2() {
             />
           </motion.div>
           <motion.div
-            style={{ translateX: isScreenSm ? moveX : 0 }}
-            className="max-sm:relative max-sm:h-[587px] max-sm:flex max-sm:justify-center"
+            style={{
+              translateX: isScreenSm ? transformPx : 0,
+              x: isScreenSm ? transformVw : 0,
+            }}
+            className="max-sm:relative max-sm:h-[587px] max-sm:w-max max-sm:flex max-sm:justify-center max-sm:-ml-6"
           >
             <motion.div
               variants={contentVariants}

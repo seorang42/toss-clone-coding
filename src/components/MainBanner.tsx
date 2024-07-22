@@ -5,7 +5,7 @@ import { ScrollIcon } from "@/components/icons";
 export default function MainBanner() {
   return (
     <div
-      className="w-full h-screen relative"
+      className="w-full h-screen relative overflow-hidden"
       style={{
         backgroundImage:
           "url('https://static.toss.im/assets/homepage/newtossim/new_main.png')",
@@ -29,7 +29,7 @@ export default function MainBanner() {
               {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
             </span>
           </div>
-          <div className="flex gap-1">
+          <div className="flex gap-1 justify-center">
             <a href="/" className="appstore-button">
               <Image
                 src="https://static.toss.im/png-icons/timeline/applekorea.png"
