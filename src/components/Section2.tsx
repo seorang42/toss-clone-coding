@@ -66,7 +66,7 @@ export default function Section2() {
           >
             <motion.div
               variants={contentVariants}
-              className="max-sm:relative absolute w-[600px] sm:-right-[104px] sm:top-[250px] shrink-0 -z-10 max-sm:h-full max-sm:w-fit"
+              className="max-sm:relative absolute w-[600px] sm:-right-[104px] sm:top-[250px] shrink-0 -z-10 max-sm:h-full max-sm:w-full max-sm:max-w-[375px]"
               transition={{ type: "tween", duration: 0.5 }}
             >
               <img
@@ -82,7 +82,7 @@ export default function Section2() {
             </motion.div>
             <motion.div
               variants={contentVariants}
-              className="max-sm:relative absolute w-[600px] sm:-left-[104px] sm:top-[586px] shrink-0 max-sm:h-full max-sm:w-fit max-sm:-ml-[100px]"
+              className="max-sm:relative absolute w-[600px] sm:-left-[104px] sm:top-[586px] shrink-0 max-sm:h-full max-sm:w-full max-sm:max-w-[375px] max-sm:-ml-[100px]"
               transition={{ type: "tween", duration: 0.5 }}
             >
               <img
