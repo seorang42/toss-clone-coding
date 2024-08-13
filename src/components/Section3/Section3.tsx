@@ -9,10 +9,10 @@ export default function Section3() {
     visible: { y: 0, opacity: 1 },
   };
   return (
-    <section className="w-full flex justify-center bg-gray-50 py-[250px] overflow-hidden">
+    <section className="w-full flex justify-center bg-gray-50 py-[250px] max-sm:py-[100px] overflow-hidden">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
-          className="w-[92%] flex flex-col "
+          className="responsive-width flex flex-col"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}

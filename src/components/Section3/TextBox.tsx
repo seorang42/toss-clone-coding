@@ -24,16 +24,18 @@ export default function TextBox({
     <motion.div
       variants={variants}
       transition={{ delay: 0.5, type: "tween", duration: 0.5 }}
-      className="w-full flex flex-col grow pl-[38px]"
+      className="w-full sm:max-w-[calc(50%-30px)] flex flex-col pl-[38px]"
     >
-      <div className="flex gap-1 items-center">
-        <div className="relative w-6 h-6">{icon}</div>
-        <h2 className="text-toss-blue text-xl">{iconText}</h2>
+      <div className="flex gap-1 items-center w-fit">
+        <div className="relative w-6 h-6 max-sm:w-4 max-sm:h-4">{icon}</div>
+        <h2 className="text-toss-blue text-xl max-sm:text-[15px]">
+          {iconText}
+        </h2>
       </div>
-      <h2 className="mt-[10px] text-[40px] font-semibold leading-normal ">
+      <h2 className="w-fit mt-[10px] text-[40px] max-sm:text-2xl font-semibold text-gray-700 leading-snug">
         {title}
       </h2>
-      <h3 className="mt-[20px] text-[22px] text-gray-500 font-medium ">
+      <h3 className="w-fit mt-[20px] text-[22px] max-sm:text-[15px] text-gray-500 font-medium">
         {subText}
       </h3>
     </motion.div>
@@ -50,8 +52,9 @@ export default function TextBox({
   );
   return (
     <div
-      className="mt-20 flex items-center gap-[60px]"
-      style={{ width: "calc(100% + 30px)" }}
+      className={`w-full mt-20 flex ${
+        !reversed ? "max-sm:flex-col" : "max-sm:flex-col-reverse"
+      } items-center sm:gap-[60px] max-sm:mt-[60px]`}
     >
       {!reversed ? TextContainer() : ImgContainer()}
       {!reversed ? ImgContainer() : TextContainer()}

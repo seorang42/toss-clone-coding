@@ -53,7 +53,7 @@ export default function Section2() {
             transition={{ type: "tween", duration: 0.5 }}
           >
             <TitleBox
-              category="홈  ·  소비"
+              category="홈 · 소비"
               content={"내 돈 관리,\n지출부터 일정까지\n똑똑하게"}
             />
           </motion.div>
