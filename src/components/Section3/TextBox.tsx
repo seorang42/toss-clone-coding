@@ -47,7 +47,7 @@ export default function TextBox({
       transition={{ delay: 0.75, type: "tween", duration: 0.5 }}
       className="flex sm:basis-[calc(50%-30px)] sm:max-w-[calc(50%-30px)] max-sm:basis-[100%-20px] max-sm:w-[calc(100%-20px)]"
     >
-      <img className="w-full h-fit" src={img} />
+      <img className="w-full h-auto" src={img} />
     </motion.div>
   );
   return (
