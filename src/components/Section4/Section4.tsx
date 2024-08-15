@@ -66,7 +66,7 @@ export default function Section4() {
           {/* 모바일 화면 */}
           <motion.div
             variants={contentVariants}
-            className="relative sm:absolute sm:w-[600px] sm:h-[936px] max-sm:max-w-[375px] max-sm:h-auto max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
+            className="relative sm:absolute sm:w-[600px] sm:h-[936px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
           >
             <div className="w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden">
@@ -95,7 +95,7 @@ export default function Section4() {
               )}
             </div>
             <img
-              className="w-full h-fit"
+              className="w-full h-auto"
               src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
             />
           </motion.div>
