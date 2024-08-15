@@ -41,7 +41,7 @@ export default function Section3() {
           />
           <TextBox
             icon={<ShieldIcon />}
-            iconText="사기 계좌 조회"
+            iconText="사기계좌 조회"
             title={"송금 전 사기 내역 조회로\n피해를 미리 방지할 수 있어요"}
             subText={
               "송금 전 토스가 알아서 사기 내역 조회를 해드려요.\n상대방의 연락처 또는 계좌가 사기 계좌인지 조회해\n안전하게 송금할 수 있어요."
