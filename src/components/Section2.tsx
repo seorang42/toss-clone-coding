@@ -71,7 +71,7 @@ export default function Section2() {
             >
               <img
                 className="phone-img"
-                src="https://static.toss.im/screens/iPhone12_Clay_Shadow.png"
+                src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img1-1"
               />
               <img
@@ -87,7 +87,7 @@ export default function Section2() {
             >
               <img
                 className="phone-img"
-                src="https://static.toss.im/screens/iPhone12_Clay_Shadow.png"
+                src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img2-1"
               />
               <img
