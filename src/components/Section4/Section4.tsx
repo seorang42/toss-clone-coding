@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import TitleBox from "../TitleBox";
 import { imgUrl } from "./imgUrl";
+import ClickAnimation from "./ClickAnimation";
 
 export default function Section4() {
   const [counter, setCounter] = useState(0);
@@ -15,15 +16,15 @@ export default function Section4() {
       if (counter === 0) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 3000);
+        }, 3500);
       } else if (counter === 1 || counter === 2 || counter === 3) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 2000);
+        }, 2500);
       } else if (counter === 4) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 4000);
+        }, 3500);
       }
 
       return () => {
@@ -39,7 +40,7 @@ export default function Section4() {
   };
 
   return (
-    <section className="w-full flex justify-center py-[250px] max-sm:py-[100px]">
+    <section className="w-full flex justify-center py-[250px] max-sm:py-[100px] overflow-hidden">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -89,6 +90,9 @@ export default function Section4() {
                   transition={{ delay: 0.3 }}
                 />
               </AnimatePresence>
+              {isInView && counter !== 4 && (
+                <ClickAnimation key={counter} index={counter} />
+              )}
             </div>
             <img
               className="w-full h-fit"
@@ -114,7 +118,7 @@ export default function Section4() {
           <motion.span
             variants={contentVariants}
             transition={{ delay: 2.5, duration: 0.5 }}
-            className="text-5x max-sm:text-[28px] font-semibold leading-normal"
+            className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
           >
             부담은{` `}
             <span className="text-gray-300">적게.</span>
