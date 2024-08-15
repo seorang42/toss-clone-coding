@@ -35,8 +35,8 @@ body {
   .phone-img {
     @apply w-full h-fit relative max-sm:w-fit max-sm:h-full;
   }
-  .screen-img {
-    @apply w-[57%] h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 rounded-xl;
+  .img-container {
+    @apply w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden;
   }
   .white-overlay {
     background: rgb(255, 255, 255);

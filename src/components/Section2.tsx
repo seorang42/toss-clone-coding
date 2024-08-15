@@ -74,11 +74,13 @@ export default function Section2() {
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img1-1"
               />
-              <img
-                className="screen-img"
-                src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_01.png"
-                alt="img1-2"
-              />
+              <div className="img-container">
+                <img
+                  className="w-full"
+                  src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_01.png"
+                  alt="img1-2"
+                />
+              </div>
             </motion.div>
             <motion.div
               variants={contentVariants}
@@ -90,11 +92,13 @@ export default function Section2() {
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img2-1"
               />
-              <img
-                className="screen-img"
-                src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_02.png"
-                alt="img2-2"
-              />
+              <div className="img-container">
+                <img
+                  className="w-full"
+                  src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_02.png"
+                  alt="img2-2"
+                />
+              </div>
             </motion.div>
           </motion.div>
           <motion.div

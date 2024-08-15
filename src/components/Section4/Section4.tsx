@@ -1,38 +1,37 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import TitleBox from "../TitleBox";
 import { imgUrl } from "./imgUrl";
 
 export default function Section4() {
   const [counter, setCounter] = useState(0);
-  const [sliderCounter, setSliderCounter] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
-    let sliderInterval: NodeJS.Timeout;
-    if (counter === 0) {
-      interval = setInterval(() => {
-        setCounter((prev) => (prev + 1) % imgUrl.length);
-      }, 3000);
-    } else if (counter === 1) {
-      interval = setInterval(() => {
-        setCounter((prev) => (prev + 1) % imgUrl.length);
-      }, 4000);
-      setSliderCounter(0);
-      sliderInterval = setInterval(() => {
-        setSliderCounter((prev) => prev + 1);
-      }, 2000);
-    } else if (counter === 2) {
-      interval = setInterval(() => {
-        setCounter((prev) => (prev + 1) % imgUrl.length);
-      }, 4000);
-    }
+    if (isInView) {
+      let interval: NodeJS.Timeout;
+      let sliderInterval: NodeJS.Timeout;
+      if (counter === 0) {
+        interval = setInterval(() => {
+          setCounter((prev) => (prev + 1) % imgUrl.length);
+        }, 3000);
+      } else if (counter === 1 || counter === 2 || counter === 3) {
+        interval = setInterval(() => {
+          setCounter((prev) => (prev + 1) % imgUrl.length);
+        }, 2000);
+      } else if (counter === 4) {
+        interval = setInterval(() => {
+          setCounter((prev) => (prev + 1) % imgUrl.length);
+        }, 4000);
+      }
 
-    return () => {
-      clearInterval(interval);
-      clearInterval(sliderInterval);
-    };
-  }, [counter]);
+      return () => {
+        clearInterval(interval);
+        clearInterval(sliderInterval);
+      };
+    }
+  }, [counter, isInView]);
 
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
@@ -42,6 +41,7 @@ export default function Section4() {
   return (
     <section className="w-full flex justify-center py-[250px] max-sm:py-[100px]">
       <motion.div
+        ref={ref}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -65,26 +65,35 @@ export default function Section4() {
           {/* 모바일 화면 */}
           <motion.div
             variants={contentVariants}
-            className="sm:absolute max-sm:flex max-sm:justify-center sm:right-0 -z-10 overflow-hidden"
+            className="relative sm:absolute sm:w-[600px] sm:h-[936px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
           >
-            <div className="sm:-mr-[60px] sm:-mt-[55px] relative max-sm:max-w-[375px]">
+            <div className="w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden">
               <AnimatePresence>
                 <motion.img
-                  className="screen-img"
+                  className="w-full"
                   key={counter}
                   src={imgUrl[counter]}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{
+                    x: counter !== 0 ? "100%" : 0,
+                  }}
+                  animate={{ x: 0, y: counter === 4 ? "-45%" : 0 }}
+                  transition={{ duration: 0.3, y: { delay: 1, duration: 2 } }}
+                />
+                <motion.img
+                  className="absolute top-0 w-full -z-10"
+                  key={counter - 1}
+                  src={imgUrl[counter - 1]}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 0 }}
+                  transition={{ delay: 0.3 }}
                 />
               </AnimatePresence>
-              <img
-                className="w-[600px] h-fit"
-                src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
-              />
             </div>
+            <img
+              className="w-full h-fit"
+              src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
+            />
           </motion.div>
           {/* 하단 텍스트 */}
           <motion.span
