@@ -1,25 +1,42 @@
 import { motion } from "framer-motion";
 import TitleBox from "../TitleBox";
 import Card from "./Card";
+import { useEffect, useState } from "react";
 
 export default function Section5() {
+  const [isScreenSm, setIsScreenSm] = useState(false);
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
     visible: { y: 0, opacity: 1 },
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setIsScreenSm(false);
+      } else {
+        setIsScreenSm(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const cardList = [
     {
       img: "https://static.toss.im/icons/png/4x/icon-credit-grade-check-2.png",
       title: "내 신용점수",
-      content:
-        "언제 어디서든, 원할 때 간편하게\nKCB, NICE 신용점수를 한 곳에서 확인할 수\n있어요.",
+      content: `언제 어디서든, 원할 때 간편하게\nKCB, NICE 신용점수를 한 곳에서 확인할 수 ${
+        !isScreenSm ? "\n" : ""
+      }있어요.`,
     },
     {
       img: "https://static.toss.im/icons/png/4x/icon-credit-grade-up-2.png",
       title: "신용점수 올리기",
-      content:
-        "통신비, 일반 납부내역 등의 서류를\n토스에서 바로 제출해 신용점수를 올릴 수\n있어요.",
+      content: `통신비, 일반 납부내역 등의 서류를\n토스에서 바로 제출해 신용점수를 올릴 수 ${
+        !isScreenSm ? "\n" : ""
+      }있어요.`,
     },
     {
       img: "https://static.toss.im/icons/png/4x/icon-alarm-3.png",
@@ -36,10 +53,10 @@ export default function Section5() {
   ];
 
   return (
-    <section className="w-full flex justify-center bg-gray-50 py-[250px]">
+    <section className="w-full flex justify-center bg-gray-50 py-[250px] max-sm:py-[100px]">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
-          className="w-[92%] flex flex-col "
+          className="responsive-width flex flex-col "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.08 }}
@@ -60,7 +77,7 @@ export default function Section5() {
           <motion.div
             variants={contentVariants}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 mt-20"
+            className="flex flex-wrap basis-[calc(100%+30px)] max-w-[calc(100%+30px)] max-sm:basis-[calc(100%+20px)] max-sm:max-w-[calc(100%+20px)] mt-20 max-sm:mt-[60px] -mr-[30px] -mb-[-30px] max-sm:-mr-5 max-sm:-mb-5 "
           >
             {cardList.map((el, index) => (
               <Card

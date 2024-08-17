@@ -46,28 +46,25 @@ export default function Section4() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{
-          staggerChildren: 0.5,
-        }}
         className="w-full h-full max-w-[1140px] flex justify-center relative"
       >
-        <motion.div
-          variants={contentVariants}
-          className="w-[92%] flex flex-col"
-          transition={{ type: "tween", duration: 0.5 }}
-        >
+        <div className="w-[92%] flex flex-col">
           {/* 제목 및 설명 */}
-          <div className="flex flex-col gap-[20px]">
+          <motion.div
+            variants={contentVariants}
+            className="flex flex-col gap-[20px]"
+            transition={{ type: "tween", duration: 0.5 }}
+          >
             <TitleBox
               category="대출"
               content={"여러 은행의 조건을\n1분 만에\n확인해보세요"}
             />
-          </div>
+          </motion.div>
           {/* 모바일 화면 */}
           <motion.div
             variants={contentVariants}
             className="relative sm:absolute sm:w-[600px] sm:h-[936px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
-            transition={{ type: "tween", duration: 0.5 }}
+            transition={{ type: "tween", duration: 0.5, delay: 0.5 }}
           >
             <div className="w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden">
               <AnimatePresence>
@@ -132,7 +129,7 @@ export default function Section4() {
               "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."
             }
           </motion.span>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
