@@ -18,7 +18,7 @@ export default function Section3() {
           viewport={{ once: true, amount: 0.15 }}
         >
           <motion.div
-            className="flex flex-col gap-[30px]"
+            className="default-title-container"
             variants={contentVariants}
             transition={{ type: "tween", duration: 0.5 }}
           >

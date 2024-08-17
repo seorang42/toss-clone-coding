@@ -32,6 +32,9 @@ body {
   .navbar-language-button {
     @apply px-[10px] py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
   }
+  .default-title-container {
+    @apply flex flex-col gap-[30px] max-sm:gap-[10px];
+  }
   .phone-img {
     @apply w-full h-fit relative max-sm:w-fit max-sm:h-full;
   }

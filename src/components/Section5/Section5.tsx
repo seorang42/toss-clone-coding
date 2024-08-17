@@ -65,7 +65,7 @@ export default function Section5() {
           <motion.div
             variants={contentVariants}
             transition={{ duration: 0.5 }}
-            className="flex flex-col gap-[30px]"
+            className="default-title-container"
           >
             <TitleBox
               category="신용"

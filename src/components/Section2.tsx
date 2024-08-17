@@ -49,7 +49,7 @@ export default function Section2() {
         >
           <motion.div
             variants={contentVariants}
-            className="sm:mt-[250px] gap-[30px] max-sm:gap-[10px] flex flex-col"
+            className="sm:mt-[250px] default-title-container"
             transition={{ type: "tween", duration: 0.5 }}
           >
             <TitleBox
@@ -66,7 +66,7 @@ export default function Section2() {
           >
             <motion.div
               variants={contentVariants}
-              className="max-sm:relative absolute w-[600px] sm:-right-[104px] sm:top-[250px] shrink-0 -z-10 max-sm:h-full max-sm:w-full max-sm:max-w-[375px]"
+              className="max-sm:relative absolute h-auto w-[600px] sm:-right-[104px] sm:top-[250px] shrink-0 -z-10 max-sm:w-full max-sm:max-w-[375px]"
               transition={{ type: "tween", duration: 0.5 }}
             >
               <img
@@ -84,7 +84,7 @@ export default function Section2() {
             </motion.div>
             <motion.div
               variants={contentVariants}
-              className="max-sm:relative absolute w-[600px] sm:-left-[104px] sm:top-[586px] shrink-0 max-sm:h-full max-sm:w-full max-sm:max-w-[375px] max-sm:-ml-[100px]"
+              className="max-sm:relative absolute h-auto w-[600px] sm:-left-[104px] sm:top-[586px] shrink-0 max-sm:w-full max-sm:max-w-[375px] max-sm:-ml-[100px]"
               transition={{ type: "tween", duration: 0.5 }}
             >
               <img
@@ -92,7 +92,7 @@ export default function Section2() {
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img2-1"
               />
-              <div className="img-container">
+              <div className="img-container sm:rounded-[30px]">
                 <img
                   className="w-full"
                   src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_02.png"

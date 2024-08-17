@@ -41,18 +41,19 @@ export default function Section4() {
 
   return (
     <section className="w-full flex justify-center py-[250px] max-sm:py-[100px] overflow-hidden">
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full h-full max-w-[1140px] flex justify-center relative"
-      >
-        <div className="w-[92%] flex flex-col">
+      <div className="w-full h-full max-w-[1140px] flex justify-center relative">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="w-[92%] flex flex-col"
+          transition={{ staggerChildren: 0.5 }}
+        >
           {/* 제목 및 설명 */}
           <motion.div
             variants={contentVariants}
-            className="flex flex-col gap-[20px]"
+            className="default-title-container sm:gap-5"
             transition={{ type: "tween", duration: 0.5 }}
           >
             <TitleBox
@@ -63,10 +64,10 @@ export default function Section4() {
           {/* 모바일 화면 */}
           <motion.div
             variants={contentVariants}
-            className="relative sm:absolute sm:w-[600px] sm:h-[936px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
-            transition={{ type: "tween", duration: 0.5, delay: 0.5 }}
+            className="relative sm:absolute h-auto sm:w-[600px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
+            transition={{ type: "tween", duration: 0.5 }}
           >
-            <div className="w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden">
+            <div className="img-container">
               <AnimatePresence>
                 <motion.img
                   className="w-full"
@@ -97,40 +98,42 @@ export default function Section4() {
             />
           </motion.div>
           {/* 하단 텍스트 */}
-          <motion.span
-            variants={contentVariants}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            className="sm:mt-[210px] max-sm:mt-[2px] text-5xl max-sm:text-[28px] font-semibold leading-normal"
-          >
-            한도는 높게,
-          </motion.span>
-          <motion.span
-            variants={contentVariants}
-            transition={{ delay: 2, duration: 0.5 }}
-            className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
-          >
-            금리는{` `}
-            <span className="text-gray-400">낮게,</span>
-          </motion.span>
-          <motion.span
-            variants={contentVariants}
-            transition={{ delay: 2.5, duration: 0.5 }}
-            className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
-          >
-            부담은{` `}
-            <span className="text-gray-300">적게.</span>
-          </motion.span>
-          <motion.span
-            variants={contentVariants}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="text-2xl max-sm:text-[17px] font-medium leading-normal text-gray-700 mt-[30px]"
-          >
-            {
-              "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."
-            }
-          </motion.span>
-        </div>
-      </motion.div>
+          <motion.div className="flex flex-col">
+            <motion.span
+              variants={contentVariants}
+              transition={{ delay: 1.5, duration: 0.5 }}
+              className="sm:mt-[210px] max-sm:mt-[2px] text-5xl max-sm:text-[28px] font-semibold leading-normal"
+            >
+              한도는 높게,
+            </motion.span>
+            <motion.span
+              variants={contentVariants}
+              transition={{ delay: 2, duration: 0.5 }}
+              className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
+            >
+              금리는{` `}
+              <span className="text-gray-400">낮게,</span>
+            </motion.span>
+            <motion.span
+              variants={contentVariants}
+              transition={{ delay: 2.5, duration: 0.5 }}
+              className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
+            >
+              부담은{` `}
+              <span className="text-gray-300">적게.</span>
+            </motion.span>
+            <motion.span
+              variants={contentVariants}
+              transition={{ delay: 1, duration: 0.5 }}
+              className="text-2xl max-sm:text-[17px] font-medium leading-normal text-gray-700 mt-[30px]"
+            >
+              {
+                "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."
+              }
+            </motion.span>
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }
