@@ -22,6 +22,15 @@ export default function TopBar() {
 
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
+  const menuList = [
+    { text: "회사 소개", url: "/" },
+    { text: "공지사항", url: "/" },
+    { text: "고객센터", url: "/" },
+    { text: "자주 묻는 질문", url: "/" },
+    { text: "토스인증서", url: "/" },
+    { text: "채용", url: "/" },
+  ];
+
   return (
     <AnimatePresence initial={false}>
       <motion.nav
@@ -45,7 +54,7 @@ export default function TopBar() {
                 />
               </a>
               <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
-                <button className="w-[76px] h-[30px] mt-[2px] opacity-80 hover:opacity-100 rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-toss-blue">
+                <button className="w-[76px] h-[30px] mt-[2px] hover:bg-primary-blue-2 rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-primary-blue-1">
                   앱 다운로드
                 </button>
                 <button
@@ -57,31 +66,13 @@ export default function TopBar() {
               </div>
             </div>
             <ul className="max-sm:w-[calc(100%+48px)] max-sm:left-0 max-sm:flex-col flex items-center">
-              <li className="navbar-button-container">
-                <a href="/" className="navbar-button">
-                  회사 소개
-                </a>
-              </li>
-              <li className="navbar-button-container">
-                <a href="/" className="navbar-button">
-                  고객센터
-                </a>
-              </li>
-              <li className="navbar-button-container">
-                <a href="/" className="navbar-button">
-                  자주 묻는 질문
-                </a>
-              </li>
-              <li className="navbar-button-container">
-                <a href="/" className="navbar-button">
-                  토스인증서
-                </a>
-              </li>
-              <li className="navbar-button-container">
-                <a href="/" className="navbar-button">
-                  채용
-                </a>
-              </li>
+              {menuList.map((el, index) => (
+                <li key={index} className="navbar-button-container">
+                  <a href={el.url} className="navbar-button">
+                    {el.text}
+                  </a>
+                </li>
+              ))}
               <ul className="flex max-sm:gap-0 items-center font-light max-sm:w-full bg-white">
                 <li className="sm:px-2 h-full flex items-center sm:pl-[52px] max-sm:hover:bg-gray-100">
                   <a href="/" className="navbar-language-button">

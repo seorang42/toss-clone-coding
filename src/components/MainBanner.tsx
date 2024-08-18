@@ -21,11 +21,11 @@ export default function MainBanner() {
         className="absolute top-0 left-0 w-full flex flex-col items-center"
       >
         <div className="mt-[170px] max-sm:mt-[100px] flex flex-col gap-[50px] max-sm:gap-5 items-center">
-          <div className="w-full text-center text-[66px] max-sm:text-[33px] font-bold leading-[1.4]">
-            <span className="max-sm:hidden">
+          <div className="w-full flex justify-center text-center font-bold leading-[1.4]">
+            <span className="max-sm:hidden text-[66px]">
               {"금융의 모든 것\n토스에서 쉽고 간편하게"}
             </span>
-            <span className="sm:hidden">
+            <span className="sm:hidden text-[33px]">
               {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
             </span>
           </div>
@@ -37,7 +37,7 @@ export default function MainBanner() {
                 width="24"
                 height="24"
               />
-              App Store
+              <span className="mt-[3px]">App Store</span>
             </a>
             <a href="/" className="appstore-button">
               <Image
@@ -46,7 +46,7 @@ export default function MainBanner() {
                 width="24"
                 height="24"
               />
-              Google Play
+              <span className="mt-[3px]">Google Play</span>
             </a>
           </div>
         </div>

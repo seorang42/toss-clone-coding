@@ -28,7 +28,7 @@ export default function TextBox({
     >
       <div className="flex gap-1 items-center w-fit">
         <div className="relative w-6 h-6 max-sm:w-4 max-sm:h-4">{icon}</div>
-        <h2 className="text-toss-blue text-xl max-sm:text-[15px]">
+        <h2 className="text-primary-blue-1 text-xl max-sm:text-[15px]">
           {iconText}
         </h2>
       </div>

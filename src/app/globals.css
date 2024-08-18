@@ -6,11 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-pretendard: "Pretendard", sans-serif;
 }
 
 body {
-  white-space: nowrap;
-  @apply text-gray-900 whitespace-pre-wrap break-keep;
+  @apply font-pretendard text-gray-900 whitespace-pre-wrap break-keep;
 }
 
 @layer utilities {
@@ -27,10 +27,10 @@ body {
     @apply sm:px-2 sm:h-full flex items-center bg-white max-sm:w-full;
   }
   .navbar-button {
-    @apply whitespace-nowrap sm:px-[10px] sm:py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
+    @apply whitespace-nowrap sm:px-[10px] sm:py-[10px] rounded-lg text-[15px] text-gray-600 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
   }
   .navbar-language-button {
-    @apply px-[10px] py-3 rounded-lg text-[15px] text-gray-500 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
+    @apply font-normal px-[10px] py-3 rounded-lg text-[16px] text-gray-600 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
   }
   .default-title-container {
     @apply flex flex-col gap-[30px] max-sm:gap-[10px];
@@ -50,6 +50,6 @@ body {
     );
   }
   .appstore-button {
-    @apply pr-4 pl-[14px] py-[10px] bg-black bg-opacity-[77%] text-white flex gap-2 rounded-lg text-[17px] whitespace-nowrap shrink-0;
+    @apply pl-[14px] pr-[16px] py-[11px] bg-black bg-opacity-[77%] text-white flex items-center gap-2 rounded-lg text-[18px] whitespace-nowrap shrink-0 leading-none;
   }
 }

@@ -19,7 +19,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "toss-blue": "#0064FF",
+        "primary-blue-1": "#4880EE",
+        "primary-blue-2": "#3263D2",
+      },
+      fontFamily: {
+        pretendard: ["var(--font-pretendard)"],
       },
     },
   },

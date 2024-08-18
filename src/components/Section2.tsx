@@ -108,7 +108,7 @@ export default function Section2() {
           >
             <h2 className="text-[23px] max-sm:text-[17px] font-medium leading-normal text-gray-700">
               {
-                "토스에 계좌와 카드를 연결해 보세요.\n계좌 잔액, 대출 · 투자 내역은 기본,\n일자별 소비와 수입까지 한 번에 볼 수 있어요."
+                "토스에 계좌와 카드를 연결해 보세요.\n계좌 잔액, 대출·투자 내역은 기본,\n일자별 소비와 수입까지 한 번에 볼 수 있어요."
               }
             </h2>
           </motion.div>
