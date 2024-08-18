@@ -4,12 +4,12 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 
 export default function Section5() {
-  const [isScreenSm, setIsScreenSm] = useState(false);
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
     visible: { y: 0, opacity: 1 },
   };
 
+  const [isScreenSm, setIsScreenSm] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 640) {
@@ -27,15 +27,15 @@ export default function Section5() {
     {
       img: "https://static.toss.im/icons/png/4x/icon-credit-grade-check-2.png",
       title: "내 신용점수",
-      content: `언제 어디서든, 원할 때 간편하게\nKCB, NICE 신용점수를 한 곳에서 확인할 수 ${
-        !isScreenSm ? "\n" : ""
+      content: `언제 어디서든, 원할 때 간편하게\nKCB, NICE 신용점수를 한 곳에서 확인할 수${
+        !isScreenSm ? "\n" : " "
       }있어요.`,
     },
     {
       img: "https://static.toss.im/icons/png/4x/icon-credit-grade-up-2.png",
       title: "신용점수 올리기",
-      content: `통신비, 일반 납부내역 등의 서류를\n토스에서 바로 제출해 신용점수를 올릴 수 ${
-        !isScreenSm ? "\n" : ""
+      content: `통신비, 일반 납부내역 등의 서류를\n토스에서 바로 제출해 신용점수를 올릴 수${
+        !isScreenSm ? "\n" : " "
       }있어요.`,
     },
     {
