@@ -55,7 +55,7 @@ export default function TopBar() {
               </a>
               <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
                 <motion.button
-                  whileHover={{ backgroundColor: "#3263d2" }}
+                  whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
                   transition={{ type: "tween", duration: 0.1 }}
                   className="w-[76px] h-[30px] mt-[2px] rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-primary-blue-1"
                 >

@@ -80,7 +80,7 @@ export default function Footer() {
   return (
     <div
       className="w-full bg-[#1A1F27]
-     pt-[50px] pb-[100px] flex justify-center"
+     pt-[50px] max-sm:pt-[60px] pb-[100px] max-sm:pb-[80px] flex justify-center"
     >
       <div className="w-full max-w-[1064px] px-[67px] flex flex-col max-sm:px-10">
         <div className="w-full flex pb-[50px] max-sm:flex-col max-sm:gap-10">
