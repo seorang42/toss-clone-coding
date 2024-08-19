@@ -34,7 +34,7 @@ export default function Section7() {
           backgroundPosition: "center",
         }}
       >
-        <span className="max-sm:text-[55px] text-[100px] font-bold max-sm:font-semibold text-[#f9fafb] leading-[1.3] text-center max-sm:white-text-shadow">
+        <span className="max-sm:text-[55px] text-[100px] font-bold max-sm:font-semibold text-toss-gray-100 leading-[1.3] text-center max-sm:white-text-shadow">
           {`꼭 필요했던${!isScreenSm ? " " : "\n"}금융`}
         </span>
         <motion.div

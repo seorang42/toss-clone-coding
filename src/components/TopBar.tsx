@@ -57,13 +57,13 @@ export default function TopBar() {
                 <motion.button
                   whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
                   transition={{ type: "tween", duration: 0.1 }}
-                  className="w-[76px] h-[30px] mt-[2px] rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-primary-blue-1"
+                  className="w-[76px] h-[30px] mt-[2px] rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-toss-blue-1"
                 >
                   앱 다운로드
                 </motion.button>
                 <button
                   onClick={() => setIsMenuOpened((prev) => !prev)}
-                  className="w-10 h-[26px] flex justify-center items-center focus:bg-gray-100"
+                  className="w-10 h-[26px] flex justify-center items-center focus:bg-[#F3F4F5]"
                 >
                   {!isMenuOpened ? <MenuIcon /> : <CloseIcon />}
                 </button>
@@ -77,17 +77,20 @@ export default function TopBar() {
                   </a>
                 </li>
               ))}
-              <ul className="flex max-sm:gap-0 items-center font-light max-sm:w-full bg-white">
-                <li className="sm:px-2 h-full flex items-center sm:pl-[52px] max-sm:hover:bg-gray-100">
+              <ul className="flex max-sm:gap-0 items-center max-sm:w-full bg-white">
+                <li className="sm:px-2 h-full flex items-center sm:pl-[52px] max-sm:hover:bg-[#F3F4F5]">
                   <a href="/" className="navbar-language-button">
                     KOR
                   </a>
                 </li>
-                <li className="w-1 h-4 text-gray-300 center flex items-center">
+                <li className="w-1 h-4 text-toss-gray-300 center flex items-center">
                   |
                 </li>
-                <li className="sm:px-2 h-full flex items-center max-sm:hover:bg-gray-100">
-                  <a href="/" className="navbar-language-button text-gray-300">
+                <li className="sm:px-2 h-full flex items-center max-sm:hover:bg-[#F3F4F5]">
+                  <a
+                    href="/"
+                    className="navbar-language-button text-toss-gray-400"
+                  >
                     ENG
                   </a>
                 </li>

@@ -73,8 +73,8 @@ export default function Part2() {
             style={{ translateY: textY, opacity: textOpacity }}
             className="flex flex-col gap-[5px] text-[40px] max-sm:text-[26px] font-semibold leading-[1.3]"
           >
-            <span className="">보험</span>
-            <span className="text-gray-400">
+            <span className="text-toss-gray-900">보험</span>
+            <span className="text-toss-gray-400">
               {"조회부터 상담,\n병원비 돌려받기를 간편하게"}
             </span>
           </motion.div>
@@ -91,7 +91,7 @@ export default function Part2() {
             className="w-full h-auto"
             src="https://static.toss.im/assets/homepage/newtossim/section2_2_insu_02.jpg"
           />
-          <span className="text-[20px] max-sm:text-[18px] leading-normal font-medium text-gray-700">
+          <span className="text-[20px] max-sm:text-[18px] leading-normal font-medium text-toss-gray-800">
             {
               "또래보다 보험료는 적절하게 내고 있는지, 낸 만큼 보장받고 있는지 확인해 보세요.\n전문가와의 상담을 통해 내게 딱 맞는 보험을 추천 받고, 병원비를 간편하게 청구할 수 있어요."
             }

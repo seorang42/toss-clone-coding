@@ -79,7 +79,7 @@ export default function Footer() {
   ];
   return (
     <div
-      className="w-full bg-[#1A1F27]
+      className="w-full bg-toss-gray-900
      pt-[50px] max-sm:pt-[60px] pb-[100px] max-sm:pb-[80px] flex justify-center"
     >
       <div className="w-full max-w-[1064px] px-[67px] flex flex-col max-sm:px-10">
@@ -89,14 +89,14 @@ export default function Footer() {
               key={index}
               className="w-full max-w-[170px] flex flex-col last:grow last:max-w-none max-sm:max-w-none"
             >
-              <li className="w-full h-[35px] text-gray-400 font-semibold text-[15px] flex items-center">
+              <li className="w-full h-[35px] text-toss-gray-400 font-semibold text-[15px] flex items-center">
                 {el.title}
               </li>
               {el.list.map((el, index) => (
                 <a
                   key={index}
                   href="/"
-                  className="flex items-center w-full min-h-[30px] leading-[30px] text-[15px] text-gray-500 hover:underline"
+                  className="flex items-center w-full min-h-[30px] leading-[30px] text-[15px] text-toss-gray-600 hover:underline"
                 >
                   {el}
                 </a>
@@ -105,15 +105,15 @@ export default function Footer() {
           ))}
         </div>
         <div className="w-full flex flex-col">
-          <span className="w-full h-9 text-gray-400 font-semibold text-[15px]">
+          <span className="w-full h-9 text-toss-gray-400 font-semibold text-[15px]">
             ㈜비바리퍼블리카
           </span>
-          <div className="w-full flex flex-col text-[13px] text-gray-500 ">
+          <div className="w-full flex flex-col text-[13px] text-toss-gray-500 ">
             <span>사업자 등록번호 : 120-88-01280 | 대표 : 이승건</span>
             <span>
               호스팅 서비스 : 주식회사 비바리퍼블리카 | 통신판매업 신고번호 :
               2014-서울강남-03377{" "}
-              <a href="/" className="hover:underline text-gray-600">
+              <a href="/" className="hover:underline text-toss-gray-600">
                 사업자정보확인
               </a>
             </span>
@@ -133,7 +133,7 @@ export default function Footer() {
               key={index}
               href="/"
               className={`w-fit text-[13px] hover:underline leading-[18px] ${
-                el.isBright ? "text-gray-400" : "text-gray-600"
+                el.isBright ? "text-toss-gray-400" : "text-toss-gray-600"
               }`}
             >
               {el.text}

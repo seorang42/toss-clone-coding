@@ -21,7 +21,7 @@ export default function MainBanner() {
         className="absolute top-0 left-0 w-full flex flex-col items-center"
       >
         <div className="mt-[170px] max-sm:mt-[100px] flex flex-col gap-[50px] max-sm:gap-5 items-center">
-          <div className="w-full flex justify-center text-center font-bold leading-[1.4]">
+          <div className="w-full flex justify-center text-center font-bold leading-[1.4] text-toss-gray-900">
             <span className="max-sm:hidden text-[66px]">
               {"금융의 모든 것\n토스에서 쉽고 간편하게"}
             </span>

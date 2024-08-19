@@ -33,7 +33,7 @@ export default function Part1() {
   const textOpacity = useTransform(scrollYProgress, [0.75, 0.95], [0, 1]);
   return (
     <div ref={ref} className="w-full flex flex-col">
-      <span className="text-6xl max-sm:text-[36px] font-semibold leading-[1.4]">
+      <span className="text-toss-gray-900 text-6xl max-sm:text-[36px] font-semibold leading-[1.4]">
         {"금융을 넘어\n일상을 더 편리하게"}
       </span>
       <motion.img
@@ -46,10 +46,10 @@ export default function Part1() {
         className="w-full flex flex-col gap-6 max-sm:gap-5 mt-[60px] max-sm:mt-[30px]"
       >
         <span className="flex flex-col gap-[5px] max-sm:gap-[3px] text-[40px] max-sm:text-[26px] font-semibold leading-[1.3]">
-          <span>세금 납부, 등본 발급까지</span>
-          <span className="text-gray-400">토스로 한 번에</span>
+          <span className="text-toss-gray-900">세금 납부, 등본 발급까지</span>
+          <span className="text-toss-gray-400">토스로 한 번에</span>
         </span>
-        <span className="text-[20px] max-sm:text-[18px] font-medium text-gray-700">
+        <span className="text-[20px] max-sm:text-[18px] font-medium text-toss-gray-800">
           {
             "놓치기 쉬운 세금 납부 및 환급은 물론\n발급을 받을 때마다 귀찮았던 주민등록 등초본까지.\n이제 토스로 편하게 신청하고 받아보세요."
           }

@@ -98,7 +98,7 @@ export default function Section4() {
             />
           </motion.div>
           {/* 하단 텍스트 */}
-          <motion.div className="flex flex-col">
+          <motion.div className="flex flex-col text-toss-gray-800">
             <motion.span
               variants={contentVariants}
               transition={{ delay: 1.5, duration: 0.5 }}
@@ -112,7 +112,7 @@ export default function Section4() {
               className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
             >
               금리는{` `}
-              <span className="text-gray-400">낮게,</span>
+              <span className="text-toss-gray-500">낮게,</span>
             </motion.span>
             <motion.span
               variants={contentVariants}
@@ -120,12 +120,12 @@ export default function Section4() {
               className="text-5xl max-sm:text-[28px] font-semibold leading-normal"
             >
               부담은{` `}
-              <span className="text-gray-300">적게.</span>
+              <span className="text-toss-gray-300">적게.</span>
             </motion.span>
             <motion.span
               variants={contentVariants}
               transition={{ delay: 1, duration: 0.5 }}
-              className="text-2xl max-sm:text-[17px] font-medium leading-normal text-gray-700 mt-[30px]"
+              className="text-2xl max-sm:text-[17px] font-medium leading-normal text-toss-gray-800 mt-[30px]"
             >
               {
                 "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."

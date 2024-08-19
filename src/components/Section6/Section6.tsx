@@ -45,7 +45,7 @@ export default function Section6() {
         <motion.span
           variants={contentVariants}
           transition={{ duration: 0.5 }}
-          className="responsive-width sm:hidden text-[17px] font-medium text-gray-700"
+          className="responsive-width sm:hidden text-[17px] font-medium text-toss-gray-800"
         >
           {
             "이해하기 쉬운 용어, 설명이 필요 없는 직관적인 화면 구성, 송금처럼 쉬운 구매 경험 그리고 투자 판단에 도움을 주는 콘텐츠까지"
@@ -69,7 +69,7 @@ export default function Section6() {
             transition={{ duration: 0.5, delay: 1 }}
             className="max-sm:hidden w-full absolute flex justify-end top-[228px] max-w-[900px]"
           >
-            <span className="text-[23px] font-medium text-gray-700">
+            <span className="text-[23px] font-medium text-toss-gray-800">
               {
                 "송금처럼 쉬운 구매 경험\n그리고 투자 판단에\n도움을 주는 콘텐츠까지"
               }
@@ -80,7 +80,7 @@ export default function Section6() {
             transition={{ duration: 0.5, delay: 1.5 }}
             className="max-sm:hidden w-full absolute top-[428px] max-w-[900px]"
           >
-            <span className="text-[23px] font-medium text-gray-700">
+            <span className="text-[23px] font-medium text-toss-gray-800">
               {"이해하기 쉬운 용어\n설명이 필요 없는\n직관적인 화면 구성"}
             </span>
           </motion.div>
@@ -88,7 +88,7 @@ export default function Section6() {
         <motion.span
           variants={contentVariants}
           transition={{ duration: 0.5, delay: !isScreenSm ? 2 : 1 }}
-          className="mt-3 max-sm:mt-[14px] text-center text-[23px] max-sm:text-[20px] font-medium max-sm:font-normal max-sm:text-gray-600"
+          className="mt-3 max-sm:mt-[14px] text-center text-[23px] max-sm:text-[20px] font-medium max-sm:font-normal text-toss-gray-800 max-sm:text-toss-gray-700"
         >
           {`별도 앱 설치 없이 토스에서 바로,\n토스증권으로 나만의 ${
             isScreenSm ? "\n" : ""

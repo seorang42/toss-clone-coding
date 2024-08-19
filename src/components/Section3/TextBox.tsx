@@ -28,14 +28,14 @@ export default function TextBox({
     >
       <div className="flex gap-1 items-center w-fit">
         <div className="relative w-6 h-6 max-sm:w-4 max-sm:h-4">{icon}</div>
-        <h2 className="text-primary-blue-1 text-xl max-sm:text-[15px]">
+        <h2 className="text-toss-blue-1 text-xl font-medium max-sm:text-[15px]">
           {iconText}
         </h2>
       </div>
-      <h2 className="w-fit mt-[10px] max-sm:mt-2 text-[40px] max-sm:text-2xl font-semibold text-gray-700 leading-snug">
+      <h2 className="w-fit mt-[10px] max-sm:mt-2 text-[40px] max-sm:text-2xl font-semibold text-toss-gray-800 leading-snug">
         {title}
       </h2>
-      <h3 className="w-fit mt-[20px] max-sm:mt-[10px] text-[22px] max-sm:text-[15px] text-gray-500 font-medium">
+      <h3 className="w-fit mt-[20px] max-sm:mt-[10px] text-[22px] max-sm:text-[15px] text-toss-gray-600 font-medium">
         {subText}
       </h3>
     </motion.div>

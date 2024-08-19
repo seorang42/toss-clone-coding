@@ -56,7 +56,7 @@ export default function Section10() {
         <span className="font-bold leading-[1.4] text-[60px] max-sm:text-[36px]">
           사업도 토스와 함께
         </span>
-        <span className="text-center text-[30px] max-sm:text-[18px] font-semibold leading-[1.4] text-gray-400">
+        <span className="text-center text-[30px] max-sm:text-[18px] font-semibold leading-[1.4] text-toss-gray-400">
           {
             "사업을 시작하셨나요?\n사업의 시작부터 관리까지\n이제 토스와 함께 하세요."
           }

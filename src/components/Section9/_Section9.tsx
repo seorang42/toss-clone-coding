@@ -48,7 +48,7 @@ export default function Section9() {
   };
 
   return (
-    <section className="w-full flex justify-center bg-gray-50 overflow-hidden">
+    <section className="w-full flex justify-center bg-toss-gray-100 overflow-hidden">
       <div className="w-full max-w-[1140px] flex justify-center py-[250px]">
         <motion.div
           initial="hidden"

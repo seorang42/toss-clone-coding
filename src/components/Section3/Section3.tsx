@@ -9,7 +9,7 @@ export default function Section3() {
     visible: { y: 0, opacity: 1 },
   };
   return (
-    <section className="w-full flex justify-center bg-gray-50 py-[250px] max-sm:py-[100px] overflow-hidden">
+    <section className="w-full flex justify-center bg-toss-gray-100 py-[250px] max-sm:py-[100px] overflow-hidden">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
           className="responsive-width flex flex-col"

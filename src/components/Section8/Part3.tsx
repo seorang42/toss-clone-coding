@@ -51,14 +51,14 @@ export default function Part3() {
         className="flex max-sm:flex-col max-sm:gap-[30px]"
       >
         <div className="w-full flex flex-col leading-[1.3]">
-          <span className="text-[40px] max-sm:text-[26px] font-semibold">
+          <span className="text-toss-gray-900 text-[40px] max-sm:text-[26px] font-semibold">
             내 부동산 · 자동차
           </span>
-          <span className="text-[40px] max-sm:text-[26px] font-semibold text-gray-400 leading-[1.3]">
+          <span className="text-[40px] max-sm:text-[26px] font-semibold text-toss-gray-400 leading-[1.3]">
             정기적으로 관리해보세요
           </span>
         </div>
-        <span className="w-full grow text-[20px] max-sm:text-[18px] font-medium">
+        <span className="text-toss-gray-800 w-full grow text-[20px] max-sm:text-[18px] font-medium">
           {
             "집과 자동차의 공통점은 잘 사서, 잘 관리하고, 잘 팔아야 한다는 것.\n시세조회부터 아파트 관리비 납부, 자동차 보험료 조회까지 부동산과 자동차 관리도 토스에서 시작해 보세요."
           }

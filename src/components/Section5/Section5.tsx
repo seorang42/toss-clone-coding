@@ -53,7 +53,7 @@ export default function Section5() {
   ];
 
   return (
-    <section className="w-full flex justify-center bg-gray-50 py-[250px] max-sm:py-[100px]">
+    <section className="w-full flex justify-center bg-toss-gray-100 py-[250px] max-sm:py-[100px]">
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
           className="responsive-width flex flex-col "

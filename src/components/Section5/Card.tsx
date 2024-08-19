@@ -19,10 +19,10 @@ export default function Card({ img, title, content, variants }: ICard) {
           src={img}
         />
       </motion.div>
-      <span className="font-semibold text-[28px] max-sm:text-2xl text-gray-700">
+      <span className="font-semibold text-[28px] max-sm:text-2xl text-toss-gray-800">
         {title}
       </span>
-      <span className="mt-[10px] text-[22px] max-sm:text-[15px] text-gray-500 font-medium break-words leading-normal">
+      <span className="mt-[10px] text-[22px] max-sm:text-[15px] text-toss-gray-600 font-medium break-words leading-normal">
         {content}
       </span>
     </div>
