@@ -54,9 +54,13 @@ export default function TopBar() {
                 />
               </a>
               <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
-                <button className="w-[76px] h-[30px] mt-[2px] hover:bg-primary-blue-2 rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-primary-blue-1">
+                <motion.button
+                  whileHover={{ backgroundColor: "#3263d2" }}
+                  transition={{ type: "tween", duration: 0.1 }}
+                  className="w-[76px] h-[30px] mt-[2px] rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-primary-blue-1"
+                >
                   앱 다운로드
-                </button>
+                </motion.button>
                 <button
                   onClick={() => setIsMenuOpened((prev) => !prev)}
                   className="w-10 h-[26px] flex justify-center items-center focus:bg-gray-100"

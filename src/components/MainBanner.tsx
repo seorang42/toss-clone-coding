@@ -30,24 +30,34 @@ export default function MainBanner() {
             </span>
           </div>
           <div className="flex gap-1 justify-center">
-            <a href="/" className="appstore-button">
+            <motion.a
+              whileHover={{ backgroundColor: "#505967" }}
+              transition={{ type: "tween", duration: 0.1 }}
+              href="/"
+              className="appstore-button"
+            >
               <Image
                 src="https://static.toss.im/png-icons/timeline/applekorea.png"
                 alt="애플 로고"
                 width="24"
                 height="24"
               />
-              <span className="mt-[3px]">App Store</span>
-            </a>
-            <a href="/" className="appstore-button">
+              App Store
+            </motion.a>
+            <motion.a
+              whileHover={{ backgroundColor: "#505967" }}
+              transition={{ type: "tween", duration: 0.1 }}
+              href="/"
+              className="appstore-button"
+            >
               <Image
                 src="https://static.toss.im/png-icons/timeline/googleplay.png"
                 alt="구글 로고"
                 width="24"
                 height="24"
               />
-              <span className="mt-[3px]">Google Play</span>
-            </a>
+              Google Play
+            </motion.a>
           </div>
         </div>
       </motion.div>
