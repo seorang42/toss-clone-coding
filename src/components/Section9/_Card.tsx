@@ -1,3 +1,5 @@
+// 토스 메인 페이지 개편으로 인해 사용되지 않음
+
 interface ICard {
   icon: JSX.Element;
   bgColor: string;

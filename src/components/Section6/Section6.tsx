@@ -55,12 +55,12 @@ export default function Section6() {
           <div className="relative h-auto sm:w-[600px] max-sm:max-w-[375px] overflow-hidden">
             <div className="img-container">
               <img
-                className="w-full"
+                className="img"
                 src="https://static.toss.im/assets/homepage/newtossim/invest_screen.png"
               />
             </div>
             <img
-              className="w-full h-auto"
+              className="img"
               src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
             />
           </div>

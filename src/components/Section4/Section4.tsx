@@ -70,7 +70,7 @@ export default function Section4() {
             <div className="img-container">
               <AnimatePresence>
                 <motion.img
-                  className="w-full"
+                  className="img"
                   key={counter}
                   src={imgUrl[counter]}
                   initial={{
@@ -93,7 +93,7 @@ export default function Section4() {
               )}
             </div>
             <img
-              className="w-full h-auto"
+              className="img"
               src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
             />
           </motion.div>
