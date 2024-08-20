@@ -4,7 +4,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   AppleLogoIcon,
   CloseIcon,
@@ -43,7 +43,9 @@ export default function TopBar() {
   const [isBtnClicked, setIsBtnClicked] = useState(false);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-  const ref = useOutsideClick(() => setIsBtnClicked(false));
+  const buttonRef = useRef(null);
+  const dropdownRef = useOutsideClick(() => setIsBtnClicked(false), buttonRef);
+  const menuRef = useOutsideClick(() => setIsMenuOpened(false));
 
   const menuList = [
     { text: "회사 소개", url: "/" },
@@ -58,6 +60,7 @@ export default function TopBar() {
     <>
       <AnimatePresence initial={false}>
         <motion.nav
+          ref={menuRef}
           animate={{ height: isMenuOpened ? "auto" : "60px" }}
           transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
           className={`w-full fixed left-0 top-0 z-50 flex justify-center bg-white overflow-hidden ${
@@ -75,6 +78,7 @@ export default function TopBar() {
                 </a>
                 <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
                   <motion.button
+                    ref={buttonRef}
                     onClick={() => setIsBtnClicked((prev) => !prev)}
                     whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
                     transition={{ type: "tween", duration: 0.2 }}
@@ -123,7 +127,7 @@ export default function TopBar() {
       </AnimatePresence>
       {isBtnClicked && isScreenSm && (
         <div
-          ref={ref}
+          ref={dropdownRef}
           className="absolute top-[46px] right-0 my-2 px-[6px] py-2 min-w-[120px] rounded-lg z-50 bg-white dropdown-shadow"
         >
           <ul>
