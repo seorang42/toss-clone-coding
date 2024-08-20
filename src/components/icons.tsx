@@ -1,3 +1,6 @@
+import Image from "next/image";
+import logo from "../../public/Toss_Logo_Primary.png";
+
 export function ScrollIcon() {
   return (
     <svg
@@ -2637,5 +2640,40 @@ export function CloseIcon() {
         d="M13.815 12l5.651-5.651a1.2 1.2 0 00-1.697-1.698l-5.651 5.652-5.652-5.652a1.201 1.201 0 00-1.697 1.698L10.421 12l-5.652 5.651a1.202 1.202 0 00.849 2.049c.307 0 .614-.117.848-.351l5.652-5.652 5.651 5.652a1.198 1.198 0 001.697 0 1.2 1.2 0 000-1.698L13.815 12z"
       ></path>
     </svg>
+  );
+}
+
+export function TossLogoIcon() {
+  return (
+    <Image
+      src={logo}
+      alt="토스로고"
+      className="w-fit h-14 object-cover"
+      priority
+    />
+  );
+}
+
+export function AppleLogoIcon({ isSmall }: { isSmall?: boolean }) {
+  return (
+    <Image
+      src="https://static.toss.im/png-icons/timeline/applekorea.png"
+      alt="애플 로고"
+      width={!isSmall ? 24 : 20}
+      height={!isSmall ? 24 : 20}
+      className="h-fit"
+    />
+  );
+}
+
+export function GoogleLogoIcon({ isSmall }: { isSmall?: boolean }) {
+  return (
+    <Image
+      src="https://static.toss.im/png-icons/timeline/googleplay.png"
+      alt="구글 로고"
+      width={!isSmall ? 24 : 20}
+      height={!isSmall ? 24 : 20}
+      className="h-fit"
+    />
   );
 }

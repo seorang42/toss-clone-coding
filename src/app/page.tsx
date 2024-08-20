@@ -12,7 +12,7 @@ import Section6 from "@/components/Section6/Section6";
 import Section7 from "@/components/Section7";
 import Section8 from "@/components/Section8/Section8";
 import Section9 from "@/components/Section9/Section9";
-import TopBar from "@/components/TopBar";
+import TopBar from "@/components/TopBar/TopBar";
 import { useEffect } from "react";
 
 export default function Home() {

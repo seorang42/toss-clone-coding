@@ -20,7 +20,7 @@ export default function Card({ title, content, btnText, link }: ICard) {
       </span>
       <motion.button
         whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
-        transition={{ type: "tween", duration: 0.1 }}
+        transition={{ type: "tween", duration: 0.2 }}
         className="bg-toss-blue-1 text-white w-fit px-4 pb-[8px] pt-[10px] rounded-lg text-[15px] font-medium"
         onClick={() => router.push(link)}
       >

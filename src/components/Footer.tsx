@@ -145,7 +145,7 @@ export default function Footer() {
             <motion.li
               initial={{ opacity: 0.7 }}
               whileHover={{ opacity: 1 }}
-              transition={{ type: "tween", duration: 0.1 }}
+              transition={{ type: "tween", duration: 0.2 }}
               key={index}
               className="w-9 h-9 rounded-full"
             >

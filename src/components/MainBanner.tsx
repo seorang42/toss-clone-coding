@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ScrollIcon } from "@/components/icons";
+import { AppleLogoIcon, GoogleLogoIcon, ScrollIcon } from "@/components/icons";
 
 export default function MainBanner() {
   return (
@@ -32,30 +32,20 @@ export default function MainBanner() {
           <div className="flex gap-1 justify-center">
             <motion.a
               whileHover={{ backgroundColor: "#505967" }}
-              transition={{ type: "tween", duration: 0.1 }}
+              transition={{ type: "tween", duration: 0.2 }}
               href="/"
               className="appstore-button"
             >
-              <Image
-                src="https://static.toss.im/png-icons/timeline/applekorea.png"
-                alt="애플 로고"
-                width="24"
-                height="24"
-              />
+              <AppleLogoIcon />
               App Store
             </motion.a>
             <motion.a
               whileHover={{ backgroundColor: "#505967" }}
-              transition={{ type: "tween", duration: 0.1 }}
+              transition={{ type: "tween", duration: 0.2 }}
               href="/"
               className="appstore-button"
             >
-              <Image
-                src="https://static.toss.im/png-icons/timeline/googleplay.png"
-                alt="구글 로고"
-                width="24"
-                height="24"
-              />
+              <GoogleLogoIcon />
               Google Play
             </motion.a>
           </div>
