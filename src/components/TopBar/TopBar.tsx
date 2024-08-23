@@ -5,14 +5,9 @@ import {
   useScroll,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import {
-  AppleLogoIcon,
-  CloseIcon,
-  GoogleLogoIcon,
-  MenuIcon,
-  TossLogoIcon,
-} from "../icons";
+import { AppleLogoIcon, CloseIcon, GoogleLogoIcon, MenuIcon } from "../icons";
 import { useOutsideClick } from "@/app/hooks/useOutsideClick";
+import { TossLogoIcon } from "../TossLogoIcon";
 
 export default function TopBar() {
   const { scrollY } = useScroll();
@@ -70,12 +65,13 @@ export default function TopBar() {
           <div className="w-full max-w-[1140px] flex justify-center">
             <div className="sm:w-[92%] flex items-center max-sm:w-full max-sm:px-6 max-sm:flex-col">
               <div className="flex w-full min-h-[60px] justify-between items-center z-10">
-                <a
-                  href="/"
-                  className="flex shrink-0 items-center h-fit relative w-[68px] mr-8 overflow-hidden"
-                >
-                  <TossLogoIcon />
-                </a>
+                <section className="flex items-center min-h-[60px] mr-6">
+                  <a href="/" className="flex w-[76px]">
+                    <span className="h-auto w-auto min-w-[24px]">
+                      <TossLogoIcon />
+                    </span>
+                  </a>
+                </section>
                 <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
                   <motion.button
                     ref={buttonRef}
