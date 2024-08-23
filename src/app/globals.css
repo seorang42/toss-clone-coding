@@ -6,7 +6,19 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --font-pretendard: "Pretendard", sans-serif;
+  --font-pretendard: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("../../public/fonts/PretendardVariable.woff2")
+    format("woff2-variations");
 }
 
 body {
@@ -27,10 +39,10 @@ body {
     @apply sm:px-2 sm:h-full flex items-center bg-white max-sm:w-full;
   }
   .navbar-button {
-    @apply whitespace-nowrap sm:px-[10px] sm:py-[10px] rounded-lg text-[15px] text-toss-gray-700 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100;
+    @apply whitespace-nowrap font-light sm:px-[10px] sm:py-[10px] rounded-lg text-[15px] text-toss-gray-700 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[18px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100 leading-[20px];
   }
   .navbar-language-button {
-    @apply font-normal px-[10px] py-3 rounded-lg text-[16px] text-toss-gray-700 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
+    @apply px-[10px] py-3 rounded-lg text-[15px] font-light text-toss-gray-700 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;
   }
   .default-title-container {
     @apply flex flex-col gap-[30px] max-sm:gap-[10px];
@@ -41,14 +53,25 @@ body {
   .img-container {
     @apply w-[57%] h-[79%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 overflow-hidden;
   }
-  .white-overlay {
+  .sm-white-overlay {
+    height: 300px;
     background: rgb(255, 255, 255);
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 1) 15%,
-      rgba(255, 255, 255, 0) 100%
+      rgba(255, 255, 255, 1) 20%,
+      rgba(255, 255, 255, 0) 90%
     );
   }
+  .white-overlay {
+    height: 600px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 10%,
+      rgba(255, 255, 255, 0) 85%
+    );
+  }
+
   .white-text-shadow {
     text-shadow: 0px 1px 20px rgba(0, 0, 0, 0.45);
   }
@@ -58,6 +81,6 @@ body {
   }
   .appstore-button {
     background-color: rgba(0, 12, 30, 0.8);
-    @apply pl-[14px] pr-[16px] py-[11px] text-white flex items-center gap-2 rounded-lg text-[18px] whitespace-nowrap shrink-0 leading-none;
+    @apply pl-[14px] pr-[16px] py-[11px] text-white flex items-center gap-2 rounded-lg text-[17px] whitespace-nowrap shrink-0 leading-none tracking-[0.01rem];
   }
 }

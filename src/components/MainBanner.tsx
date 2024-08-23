@@ -13,7 +13,7 @@ export default function MainBanner() {
         backgroundSize: "cover",
       }}
     >
-      <div className="absolute top-0 left-0 w-full h-[500px] max-sm:h-[300px] white-overlay" />
+      <div className="absolute top-0 left-0 w-full white-overlay max-sm:sm-white-overlay" />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -22,10 +22,10 @@ export default function MainBanner() {
       >
         <div className="mt-[170px] max-sm:mt-[100px] flex flex-col gap-[50px] max-sm:gap-5 items-center">
           <div className="w-full flex justify-center text-center font-bold leading-[1.4] text-toss-gray-900">
-            <span className="max-sm:hidden text-[66px]">
+            <span className="max-sm:hidden text-[66px] font-semibold">
               {"금융의 모든 것\n토스에서 쉽고 간편하게"}
             </span>
-            <span className="sm:hidden text-[33px]">
+            <span className="sm:hidden text-[33px] font-semibold">
               {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
             </span>
           </div>

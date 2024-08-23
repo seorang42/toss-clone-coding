@@ -72,19 +72,19 @@ export default function TopBar() {
                     </span>
                   </a>
                 </section>
-                <div className="sm:hidden flex gap-3 items-center mt-[1px] -mr-[14px]">
+                <div className="sm:hidden absolute top-4 right-5 flex gap-3 items-center">
                   <motion.button
                     ref={buttonRef}
                     onClick={() => setIsBtnClicked((prev) => !prev)}
                     whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
                     transition={{ type: "tween", duration: 0.2 }}
-                    className="w-[76px] h-[30px] mt-[2px] rounded-[15px] flex justify-center items-center text-[11.5px] text-white bg-toss-blue-1"
+                    className="w-[76px] h-[30px] rounded-[15px] flex justify-center items-center text-[12px] text-white bg-toss-blue-1"
                   >
                     앱 다운로드
                   </motion.button>
                   <button
                     onClick={() => setIsMenuOpened((prev) => !prev)}
-                    className="w-10 h-[26px] flex justify-center items-center focus:bg-[#F3F4F5]"
+                    className="h-[26px] flex px-2 -mr-2 focus:bg-[#F3F4F5]"
                   >
                     {!isMenuOpened ? <MenuIcon /> : <CloseIcon />}
                   </button>
@@ -104,7 +104,7 @@ export default function TopBar() {
                       KOR
                     </a>
                   </li>
-                  <li className="w-1 h-4 text-toss-gray-300 center flex items-center">
+                  <li className="w-1 h-4 text-toss-gray-300 center flex items-center font-light">
                     |
                   </li>
                   <li className="sm:px-2 h-full flex items-center max-sm:hover:bg-[#F3F4F5]">

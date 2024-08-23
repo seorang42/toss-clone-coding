@@ -27,6 +27,7 @@ export default function Footer() {
         "토스플레이스",
         "토스모바일",
         "채용",
+        "기술 블로그",
         "블로그",
         "공고",
       ],
@@ -38,7 +39,7 @@ export default function Footer() {
         "토스쇼핑 입점문의",
         "광고 문의",
         "인증 사업 문의",
-        "마케팅·PR",
+        "마케팅 · PR",
         "IR",
       ],
     },
@@ -83,13 +84,13 @@ export default function Footer() {
      pt-[50px] max-sm:pt-[60px] pb-[100px] max-sm:pb-[80px] flex justify-center"
     >
       <div className="w-full max-w-[1064px] px-[67px] flex flex-col max-sm:px-10">
-        <div className="w-full flex pb-[50px] max-sm:flex-col max-sm:gap-10">
+        <div className="w-full flex pb-[50px] max-sm:pb-[40px] max-sm:flex-col max-sm:gap-10">
           {menuList.map((el, index) => (
             <ul
               key={index}
               className="w-full max-w-[170px] flex flex-col last:grow last:max-w-none max-sm:max-w-none"
             >
-              <li className="w-full h-[35px] text-toss-gray-400 font-semibold text-[15px] flex items-center">
+              <li className="w-full h-[35px] text-toss-gray-400 font-semibold text-[15px] flex items-center pb-[5px]">
                 {el.title}
               </li>
               {el.list.map((el, index) => (

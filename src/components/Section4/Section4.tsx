@@ -9,6 +9,20 @@ export default function Section4() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const [isScreenSm, setIsScreenSm] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setIsScreenSm(false);
+      } else {
+        setIsScreenSm(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     if (isInView) {
       let interval: NodeJS.Timeout;
@@ -125,11 +139,11 @@ export default function Section4() {
             <motion.span
               variants={contentVariants}
               transition={{ delay: 1, duration: 0.5 }}
-              className="text-2xl max-sm:text-[17px] font-medium leading-normal text-toss-gray-800 mt-[30px]"
+              className="text-[23px] max-sm:text-[17px] font-medium leading-normal text-toss-gray-800 mt-[30px]"
             >
-              {
-                "앉은 자리에서 여러 은행의 한도와 금리를 비교하고\n내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요."
-              }
+              {`앉은 자리에서 여러 은행의 한도와 금리를 비교하고${
+                !isScreenSm ? "\n" : " "
+              }내게 꼭 맞는 대출을 찾아보세요.\n신용, 비상금, 대환, 주택담보대출 모두 가능해요.`}
             </motion.span>
           </motion.div>
         </motion.div>
