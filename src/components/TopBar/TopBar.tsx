@@ -58,16 +58,18 @@ export default function TopBar() {
           ref={menuRef}
           animate={{ height: isMenuOpened ? "auto" : "60px" }}
           transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
-          className={`w-full fixed left-0 top-0 z-50 flex justify-center bg-white overflow-hidden ${
-            isScrolled && !isMenuOpened && "border-b border-[#E6E8EA]"
+          className={`w-full fixed left-0 top-0 z-50 flex justify-center bg-white overflow-hidden border-b ${
+            isScrolled && !isMenuOpened
+              ? "border-[#E6E8EA]"
+              : "border-transparent"
           }`}
         >
           <div className="w-full max-w-[1140px] flex justify-center">
             <div className="sm:w-[92%] flex items-center max-sm:w-full max-sm:px-6 max-sm:flex-col">
-              <div className="flex w-full min-h-[60px] justify-between items-center z-10">
-                <section className="flex items-center min-h-[60px] mr-6">
-                  <a href="/" className="flex w-[76px]">
-                    <span className="h-auto w-auto min-w-[24px]">
+              <div className="flex w-full min-h-[60px] items-center z-10">
+                <section className="flex items-center mr-6">
+                  <a href="/" className="flex w-[76px] items-center">
+                    <span className="h-auto w-auto min-w-[24px] sm:mt-[0.5px]">
                       <TossLogoIcon />
                     </span>
                   </a>

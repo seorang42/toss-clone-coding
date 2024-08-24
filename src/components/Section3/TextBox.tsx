@@ -28,7 +28,7 @@ export default function TextBox({
     >
       <div className="flex gap-1 items-center w-fit">
         <div className="relative w-6 h-6 max-sm:w-4 max-sm:h-4">{icon}</div>
-        <h2 className="text-toss-blue-1 text-xl font-medium max-sm:text-[15px]">
+        <h2 className="text-toss-blue-1 text-[20px] font-medium max-sm:text-[15px]">
           {iconText}
         </h2>
       </div>
@@ -51,7 +51,7 @@ export default function TextBox({
   );
   return (
     <div
-      className={`w-[calc(100%+30px)] max-sm:w-[calc(100%+20px)] mt-[150px] max-sm:mt-[60px] flex sm:items-center ${
+      className={`w-[calc(100%+30px)] max-sm:w-[calc(100%+20px)] flex sm:items-center ${
         !reversed ? "max-sm:flex-col" : "max-sm:flex-col-reverse"
       } sm:gap-[60px]`}
     >
