@@ -3,9 +3,11 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import TitleBox from "../TitleBox";
 import { imgUrl } from "./imgUrl";
 import ClickAnimation from "./ClickAnimation";
+import Possibility from "./Possibility";
 
 export default function Section4() {
   const [counter, setCounter] = useState(0);
+  const [progress, setProgress] = useState(20);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -26,16 +28,18 @@ export default function Section4() {
   useEffect(() => {
     if (isInView) {
       let interval: NodeJS.Timeout;
-      let sliderInterval: NodeJS.Timeout;
+      let progressInterval: NodeJS.Timeout;
       if (counter === 0) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
         }, 3500);
+        setProgress(74);
       } else if (counter === 1 || counter === 2 || counter === 3) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 2500);
+        }, 2000);
       } else if (counter === 4) {
+        setProgress(0);
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
         }, 3500);
@@ -43,7 +47,7 @@ export default function Section4() {
 
       return () => {
         clearInterval(interval);
-        clearInterval(sliderInterval);
+        clearInterval(progressInterval);
       };
     }
   }, [counter, isInView]);
@@ -81,6 +85,7 @@ export default function Section4() {
             className="relative sm:absolute h-auto sm:w-[600px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
           >
+            {counter === 0 && <Possibility progress={progress} />}
             <div className="img-container">
               <AnimatePresence>
                 <motion.img

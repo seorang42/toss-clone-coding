@@ -2,7 +2,7 @@ export const TossLogoIcon = () => {
   return (
     <svg
       className="w-auto h-[20px]"
-      enable-background="new 0 0 656.3 200"
+      enableBackground="new 0 0 656.3 200"
       viewBox="0 0 656.3 200"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
