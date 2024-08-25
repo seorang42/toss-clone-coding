@@ -13,13 +13,24 @@ export default function Section4() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const screenRef = useRef<HTMLDivElement>(null);
   const [isScreenSm, setIsScreenSm] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [screenHeight, setScreenHeight] = useState(0);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 640) {
         setIsScreenSm(false);
+        if (screenRef.current !== null) {
+          setScreenWidth(screenRef.current.clientWidth);
+          setScreenHeight(screenRef.current.clientHeight);
+        }
       } else {
         setIsScreenSm(true);
+        if (screenRef.current !== null) {
+          setScreenWidth(screenRef.current.clientWidth);
+          setScreenHeight(screenRef.current.clientHeight);
+        }
       }
     };
     handleResize();
@@ -83,6 +94,7 @@ export default function Section4() {
           </motion.div>
           {/* 모바일 화면 */}
           <motion.div
+            ref={screenRef}
             variants={contentVariants}
             className="relative sm:absolute h-auto sm:w-[600px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
@@ -109,7 +121,11 @@ export default function Section4() {
                   }}
                 />
                 {/* 화면 넘어갈 때 수치가 초기화되는 것으로 보이는 것 방지 */}
-                <ProgressNoAnimation counter={counter} />
+                <ProgressNoAnimation
+                  width={screenWidth}
+                  height={screenHeight}
+                  counter={counter}
+                />
                 <motion.img
                   className="absolute top-0 w-full -z-20"
                   key={counter - 1}

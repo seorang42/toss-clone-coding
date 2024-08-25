@@ -85,6 +85,6 @@ body {
   }
 
   .percent-number {
-    @apply relative w-[17px] h-10 text-[28px] font-semibold flex justify-center items-start;
+    @apply relative flex w-[3%] h-full justify-center items-start bg-white;
   }
 }
