@@ -83,4 +83,8 @@ body {
     background-color: rgba(0, 12, 30, 0.8);
     @apply pl-[14px] pr-[16px] py-[11px] text-white flex items-center gap-2 rounded-lg text-[17px] whitespace-nowrap shrink-0 leading-none tracking-[0.01rem];
   }
+
+  .percent-number {
+    @apply relative w-[17px] h-10 text-[28px] font-semibold flex justify-center items-start;
+  }
 }

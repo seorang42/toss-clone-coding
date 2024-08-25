@@ -4,10 +4,11 @@ import TitleBox from "../TitleBox";
 import { imgUrl } from "./imgUrl";
 import ClickAnimation from "./ClickAnimation";
 import Possibility from "./Possibility";
+import Percent from "./Percent";
 
 export default function Section4() {
   const [counter, setCounter] = useState(0);
-  const [progress, setProgress] = useState(20);
+  const [progress, setProgress] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -32,7 +33,7 @@ export default function Section4() {
       if (counter === 0) {
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 3500);
+        }, 3000);
         setProgress(74);
       } else if (counter === 1 || counter === 2 || counter === 3) {
         interval = setInterval(() => {
@@ -42,7 +43,7 @@ export default function Section4() {
         setProgress(0);
         interval = setInterval(() => {
           setCounter((prev) => (prev + 1) % imgUrl.length);
-        }, 3500);
+        }, 4000);
       }
 
       return () => {
@@ -85,7 +86,12 @@ export default function Section4() {
             className="relative sm:absolute h-auto sm:w-[600px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
           >
-            {counter === 0 && <Possibility progress={progress} />}
+            {counter === 0 && (
+              <>
+                <Possibility progress={progress} />
+                <Percent />
+              </>
+            )}
             <div className="img-container">
               <AnimatePresence>
                 <motion.img
@@ -96,7 +102,10 @@ export default function Section4() {
                     x: counter !== 0 ? "100%" : 0,
                   }}
                   animate={{ x: 0, y: counter === 4 ? "-45%" : 0 }}
-                  transition={{ duration: 0.3, y: { delay: 1, duration: 2 } }}
+                  transition={{
+                    duration: 0.3,
+                    y: { delay: 1, duration: 1.8, ease: "easeOut" },
+                  }}
                 />
                 <motion.img
                   className="absolute top-0 w-full -z-10"
