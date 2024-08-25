@@ -5,6 +5,7 @@ import { imgUrl } from "./imgUrl";
 import ClickAnimation from "./ClickAnimation";
 import Possibility from "./Possibility";
 import Percent from "./Percent";
+import ProgressNoAnimation from "./ProgressNoAnimation";
 
 export default function Section4() {
   const [counter, setCounter] = useState(0);
@@ -107,8 +108,10 @@ export default function Section4() {
                     y: { delay: 1, duration: 1.8, ease: "easeOut" },
                   }}
                 />
+                {/* 화면 넘어갈 때 수치가 초기화되는 것으로 보이는 것 방지 */}
+                <ProgressNoAnimation counter={counter} />
                 <motion.img
-                  className="absolute top-0 w-full -z-10"
+                  className="absolute top-0 w-full -z-20"
                   key={counter - 1}
                   src={imgUrl[counter - 1]}
                   initial={{ opacity: 1 }}
