@@ -99,7 +99,7 @@ export default function Section4() {
             className="relative sm:absolute h-auto sm:w-[600px] max-sm:max-w-[375px] max-sm:self-center sm:right-0 -z-10 overflow-hidden sm:-mr-[60px] sm:-mt-[55px]"
             transition={{ type: "tween", duration: 0.5 }}
           >
-            {counter === 0 && (
+            {isInView && counter === 0 && (
               <>
                 <Possibility progress={progress} />
                 <Percent />

@@ -22,7 +22,7 @@
 }
 
 body {
-  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep;
+  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep overflow-x-hidden;
 }
 
 @layer utilities {

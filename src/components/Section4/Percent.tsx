@@ -8,7 +8,7 @@ export default function Percent() {
           className="absolute w-full h-auto flex items-center"
           initial={{ y: "4%" }}
           animate={{ y: "-88.7%" }}
-          transition={{ duration: 1.2, type: "tween", ease: "easeOut" }}
+          transition={{ duration: 1.2, type: "tween", ease: "easeInOut" }}
           viewBox="0 0 17 253"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ export default function Percent() {
           className="absolute w-full h-auto"
           initial={{ y: "3%" }}
           animate={{ y: "-90%" }}
-          transition={{ duration: 1.2, type: "tween", ease: "easeOut" }}
+          transition={{ duration: 1.2, type: "tween", ease: "easeInOut" }}
           viewBox="0 0 17 285"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
