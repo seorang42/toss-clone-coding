@@ -21,8 +21,15 @@
     format("woff2-variations");
 }
 
+html {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
-  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep overflow-x-hidden;
+  height: 100%;
+  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap
+    break-keep overflow-x-hidden;
 }
 
 @layer utilities {
