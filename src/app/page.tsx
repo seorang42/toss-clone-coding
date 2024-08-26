@@ -13,25 +13,26 @@ import Section7 from "@/components/Section7";
 import Section8 from "@/components/Section8/Section8";
 import Section9 from "@/components/Section9/Section9";
 import TopBar from "@/components/TopBar/TopBar";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   // 페이지가 새로고침 될 때 이전에 위치하던 곳의 애니메이션 자동재생 방지
   useEffect(() => {
-    if (typeof window !== undefined) {
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
+    if (ref.current !== null) {
+      setTimeout(() => {
+        if (ref.current !== null) {
+          window.scrollTo({ top: ref.current.offsetTop });
           setIsLoaded(true);
-        }, 20);
-      });
+        }
+      }, 20);
     }
   }, []);
 
   return (
-    <div className="flex flex-col w-screen items-center">
+    <div ref={ref} className="flex flex-col w-screen items-center">
       <TopBar />
       <MainBanner />
       {isLoaded && (
