@@ -43,18 +43,12 @@ export default function Section10() {
       transition={{ staggerChildren: 0.5 }}
       className="w-full flex flex-col bg-black sm:pt-[100px] sm:pb-[250px] max-sm:pb-[100px]"
     >
-      <motion.div
+      <motion.img
         variants={contentVariants}
         transition={{ duration: 0.5, type: "tween" }}
-        className="mb-[11px] max-sm:mb-1 max-sm:h-[600px] max-sm:w-auto relative"
-      >
-        <Image
-          fill
-          src="https://static.toss.im/assets/homepage/newtossim/section4_device.jpg"
-          alt="devicesImg"
-          style={{ objectFit: "cover" }}
-        />
-      </motion.div>
+        className="mb-[11px] max-sm:mb-1 max-sm:h-[600px] max-sm:w-auto max-sm:object-cover"
+        src="https://static.toss.im/assets/homepage/newtossim/section4_device.jpg"
+      />
       <motion.div
         variants={contentVariants}
         transition={{ duration: 0.5, type: "tween" }}

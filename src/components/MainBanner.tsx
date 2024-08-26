@@ -4,16 +4,15 @@ import Image from "next/image";
 
 export default function MainBanner() {
   return (
-    <div className="w-full h-screen relative overflow-hidden">
-      <Image
-        className="h-screen w-auto"
-        width={0}
-        height={0}
-        sizes="100vw"
-        src="https://static.toss.im/assets/homepage/newtossim/new_main.png"
-        style={{ objectFit: "cover" }}
-        alt="BannerImg"
-      />
+    <div
+      className="w-full h-screen relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('https://static.toss.im/assets/homepage/newtossim/new_main.png')",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="absolute top-0 left-0 w-full white-overlay max-sm:sm-white-overlay" />
       <motion.div
         initial={{ opacity: 0 }}
