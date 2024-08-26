@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Footer() {
   const menuList = [
@@ -141,21 +142,20 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <ul className="flex gap-2">
+        <div className="flex gap-2">
           {snsList.map((el, index) => (
-            <motion.li
+            <motion.a
               initial={{ opacity: 0.7 }}
               whileHover={{ opacity: 1 }}
               transition={{ type: "tween", duration: 0.2 }}
               key={index}
-              className="w-9 h-9 rounded-full"
+              className="w-9 h-9 rounded-full relative"
+              href="/"
             >
-              <a className="w-full h-full" href="/">
-                <img className="w-full h-full" src={el} />
-              </a>
-            </motion.li>
+              <Image fill src={el} alt={el} />
+            </motion.a>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

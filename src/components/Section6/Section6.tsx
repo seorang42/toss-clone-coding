@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import TitleBox from "../TitleBox";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function Section6() {
   const ref = useRef(null);
@@ -54,14 +55,22 @@ export default function Section6() {
         <div className="w-full max-w-[1140px] flex justify-center relative">
           <div className="relative h-auto sm:w-[600px] max-sm:max-w-[375px] overflow-hidden">
             <div className="img-container">
-              <img
+              <Image
                 className="img"
+                width={0}
+                height={0}
+                sizes="100vw"
                 src="https://static.toss.im/assets/homepage/newtossim/invest_screen.png"
+                alt="section6Img"
               />
             </div>
-            <img
+            <Image
               className="img"
+              width={0}
+              height={0}
+              sizes="100vw"
               src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
+              alt="iphoneImg"
             />
           </div>
           <motion.div

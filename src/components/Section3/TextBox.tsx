@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { WonIcon } from "../icons";
+import Image from "next/image";
 
 interface ITextBox {
   icon: JSX.Element;
@@ -42,12 +43,20 @@ export default function TextBox({
   );
 
   const ImgContainer = () => (
-    <motion.img
-      src={img}
+    <motion.div
       variants={variants}
       transition={{ delay: 0.75, type: "tween", duration: 0.5 }}
-      className="sm:basis-[calc(50%-30px)] sm:max-w-[calc(50%-30px)] max-sm:basis-[100%-20px] max-sm:w-[calc(100%-20px)] h-auto"
-    />
+      className="sm:basis-[calc(50%-30px)] sm:max-w-[calc(50%-30px)] max-sm:basis-[100%-20px] max-sm:w-[calc(100%-20px)]"
+    >
+      <Image
+        className="img"
+        width={0}
+        height={0}
+        sizes="100vw"
+        src={img}
+        alt="section3Img"
+      />
+    </motion.div>
   );
   return (
     <div

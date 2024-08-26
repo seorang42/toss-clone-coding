@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Part2() {
@@ -65,10 +66,16 @@ export default function Part2() {
             opacity: img1Opacity,
           }}
         >
-          <img
-            className="w-full h-auto max-sm:max-w-[240px]"
-            src="https://static.toss.im/assets/homepage/newtossim/section2_2_insu_01.jpg"
-          />
+          <div className="w-full h-auto max-sm:max-w-[240px]">
+            <Image
+              src="https://static.toss.im/assets/homepage/newtossim/section2_2_insu_01.jpg"
+              className="img"
+              width={0}
+              height={0}
+              sizes="100vw"
+              alt="part2Img-1"
+            />
+          </div>
           <motion.div
             style={{ translateY: textY, opacity: textOpacity }}
             className="flex flex-col gap-[5px] text-[40px] max-sm:text-[26px] font-semibold leading-[1.3]"
@@ -87,9 +94,13 @@ export default function Part2() {
             opacity: img2Opacity,
           }}
         >
-          <img
-            className="w-full h-auto"
+          <Image
+            className="img"
+            width={0}
+            height={0}
+            sizes="100vw"
             src="https://static.toss.im/assets/homepage/newtossim/section2_2_insu_02.jpg"
+            alt="part2Img-2"
           />
           <span className="text-[20px] max-sm:text-[18px] leading-normal font-medium text-toss-gray-800">
             {

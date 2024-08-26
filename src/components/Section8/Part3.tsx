@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Part3() {
@@ -42,10 +43,16 @@ export default function Part3() {
       ref={ref}
       className="w-full flex flex-col gap-[50px] max-sm:gap-[30px] mt-[10px]"
     >
-      <motion.img
-        style={{ translateY: imgY, opacity: imgOpacity }}
-        src="https://static.toss.im/assets/homepage/newtossim/section2_3_apt_01.jpg"
-      />
+      <motion.div style={{ translateY: imgY, opacity: imgOpacity }}>
+        <Image
+          className="img"
+          width={0}
+          height={0}
+          sizes="100vw"
+          src="https://static.toss.im/assets/homepage/newtossim/section2_3_apt_01.jpg"
+          alt="part3Img"
+        />
+      </motion.div>
       <motion.div
         style={{ translateY: textY, opacity: textOpacity }}
         className="flex max-sm:flex-col max-sm:gap-[30px]"

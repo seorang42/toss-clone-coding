@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import TitleBox from "./TitleBox";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function Section2() {
   const contentVariants = {
@@ -70,14 +71,21 @@ export default function Section2() {
               transition={{ type: "tween", duration: 0.5 }}
             >
               <div className="img-container">
-                <img
+                <Image
                   className="img"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_01.png"
                   alt="img1-2"
+                  loading="lazy"
                 />
               </div>
-              <img
+              <Image
                 className="img"
+                width={0}
+                height={0}
+                sizes="100vw"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img1-1"
               />
@@ -88,14 +96,21 @@ export default function Section2() {
               transition={{ type: "tween", duration: 0.5 }}
             >
               <div className="img-container">
-                <img
-                  className="img rounded-[30px]"
+                <Image
+                  className="img"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   src="https://static.toss.im/assets/homepage/newtossim/section1_1_home_02.png"
                   alt="img2-2"
+                  loading="lazy"
                 />
               </div>
-              <img
+              <Image
                 className="img"
+                width={0}
+                height={0}
+                sizes="100vw"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
                 alt="img2-1"
               />

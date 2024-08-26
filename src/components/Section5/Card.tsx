@@ -1,4 +1,5 @@
 import { Variants, motion } from "framer-motion";
+import Image from "next/image";
 
 interface ICard {
   img: string;
@@ -14,9 +15,13 @@ export default function Card({ img, title, content, variants }: ICard) {
         variants={variants}
         transition={{ delay: 1.3, duration: 0.5 }}
       >
-        <img
-          className="w-[120px] max-sm:w-20 h-auto mb-[30px] max-sm:mb-[22px]"
+        <Image
+          className="w-[120px] h-auto mb-[30px] max-sm:mb-[22px]"
+          width={0}
+          height={0}
+          sizes="100vw"
           src={img}
+          alt="cardImg"
         />
       </motion.div>
       <span className="font-semibold text-[28px] max-sm:text-2xl text-toss-gray-800">

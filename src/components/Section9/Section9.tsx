@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TitleBox from "../TitleBox";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Section9() {
   const [isScreenSm, setIsScreenSm] = useState(false);
@@ -70,14 +71,22 @@ export default function Section9() {
               className="w-[600px] max-sm:w-full max-sm:max-w-[375px] max-sm:self-center h-auto absolute max-sm:relative sm:bottom-0 sm:-left-[124px] -z-10"
             >
               <div className="img-container">
-                <img
+                <Image
                   className="img"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   src="https://static.toss.im/assets/homepage/newtossim/chekout_screen_01.png"
+                  alt="section9Img-1"
                 />
               </div>
-              <img
+              <Image
                 className="img"
+                width={0}
+                height={0}
+                sizes="100vw"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
+                alt="iphoneImg"
               />
             </motion.section>
             <motion.span
@@ -99,14 +108,22 @@ export default function Section9() {
               className="w-[600px] max-sm:w-full max-sm:max-w-[375px] max-sm:self-center h-auto absolute max-sm:relative sm:-top-[70px] sm:-right-[70px] -z-10"
             >
               <div className="img-container">
-                <img
+                <Image
                   className="img"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   src="https://static.toss.im/assets/homepage/newtossim/chekout_screen_02.png"
+                  alt="section9Img-2"
                 />
               </div>
-              <img
+              <Image
                 className="img"
+                width={0}
+                height={0}
+                sizes="100vw"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
+                alt="iphoneImg"
               />
             </motion.section>
             <motion.span

@@ -39,7 +39,7 @@ body {
     @apply sm:px-2 sm:h-full flex items-center bg-white max-sm:w-full;
   }
   .navbar-button {
-    @apply whitespace-nowrap font-light sm:px-[10px] sm:py-[10px] rounded-lg text-[15px] text-toss-gray-700 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[18px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100 leading-[20px];
+    @apply whitespace-nowrap font-light sm:px-[10px] sm:py-[12px] rounded-lg text-[15px] text-toss-gray-700 sm:hover:bg-gray-100 cursor-pointer max-sm:px-5 max-sm:py-[18px] max-sm:rounded-none max-sm:w-full max-sm:hover:bg-gray-100 leading-[20px];
   }
   .navbar-language-button {
     @apply px-[10px] py-3 rounded-lg text-[15px] font-light text-toss-gray-700 sm:hover:bg-gray-100 max-sm:px-5 max-sm:py-[17px] max-sm:rounded-none;

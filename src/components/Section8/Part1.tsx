@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function Part1() {
@@ -36,11 +37,19 @@ export default function Part1() {
       <span className="text-toss-gray-900 text-6xl max-sm:text-[36px] font-semibold leading-[1.4]">
         {"금융을 넘어\n일상을 더 편리하게"}
       </span>
-      <motion.img
+      <motion.div
         style={{ translateY: imgY, opacity: imgOpacity }}
         className="mt-[140px] max-sm:mt-16 w-full max-w-[740px] self-center"
-        src="https://static.toss.im/assets/homepage/newtossim/section2_1_document.jpg"
-      />
+      >
+        <Image
+          className="img"
+          width={0}
+          height={0}
+          sizes="100vw"
+          src="https://static.toss.im/assets/homepage/newtossim/section2_1_document.jpg"
+          alt="part1Img"
+        />
+      </motion.div>
       <motion.div
         style={{ translateY: textY, opacity: textOpacity }}
         className="w-full flex flex-col gap-6 max-sm:gap-5 mt-[60px] max-sm:mt-[30px]"
