@@ -20,10 +20,14 @@ export default function Home() {
 
   // 페이지가 새로고침 될 때 이전에 위치하던 곳의 애니메이션 자동재생 방지
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-      setIsLoaded(true);
-    }, 20);
+    if (typeof window !== undefined) {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          setIsLoaded(true);
+        }, 20);
+      });
+    }
   }, []);
 
   return (
