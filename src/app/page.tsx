@@ -17,17 +17,22 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   // 페이지가 새로고침 될 때 이전에 위치하던 곳의 애니메이션 자동재생 방지
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-      setIsLoaded(true);
-    }, 20);
+    if (ref.current !== null) {
+      setTimeout(() => {
+        if (ref.current !== null) {
+          window.scrollTo({ top: ref.current?.clientTop });
+          setIsLoaded(true);
+        }
+      }, 20);
+    }
   }, []);
 
   return (
-    <div className="flex flex-col w-screen items-center">
+    <div ref={ref} className="flex flex-col w-screen items-center">
       <TopBar />
       <MainBanner />
       {isLoaded && (

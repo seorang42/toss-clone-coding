@@ -22,12 +22,11 @@
 }
 
 html {
-  height: auto;
+  height: 100%;
   overflow: auto;
 }
 
 body {
-  height: 100%;
   @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep overflow-x-hidden;
 }
 
