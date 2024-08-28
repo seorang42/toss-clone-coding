@@ -63,7 +63,7 @@ export default function Section2() {
               translateX: isScreenSm ? transformPx : 0,
               x: isScreenSm ? transformVw : 0,
             }}
-            className="max-sm:relative max-sm:h-[587px] max-sm:w-max max-sm:flex max-sm:justify-center max-sm:-ml-6"
+            className="max-sm:relative max-sm:h-[587px] max-sm:w-max max-sm:flex max-sm:justify-center max-sm:-ml-6 max-sm:shrink-0 max-sm:overflow-hidden"
           >
             <motion.div
               variants={contentVariants}
