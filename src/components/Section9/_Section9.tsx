@@ -9,8 +9,12 @@ import {
 } from "../icons";
 import { motion } from "framer-motion";
 import Card from "./_Card";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section9() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const cardList = [
     {
       icon: <FindSubsidyIcon />,
@@ -52,7 +56,7 @@ export default function Section9() {
       <div className="w-full max-w-[1140px] flex justify-center py-[250px]">
         <motion.div
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true, amount: 0.06 }}
           className="w-[92%] flex flex-col"
         >

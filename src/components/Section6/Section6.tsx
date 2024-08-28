@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import TitleBox from "../TitleBox";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section6() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const ref = useRef(null);
 
   const contentVariants = {
@@ -31,7 +35,7 @@ export default function Section6() {
     <section className="w-full flex justify-center py-[250px] max-sm:py-[100px] overflow-hidden">
       <motion.div
         initial="hidden"
-        whileInView="visible"
+        whileInView={isLoaded ? "visible" : ""}
         viewport={{ once: true, amount: 0.08 }}
         ref={ref}
         className="w-full flex flex-col items-center"

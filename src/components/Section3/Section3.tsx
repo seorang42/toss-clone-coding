@@ -2,8 +2,12 @@ import { ClockIcon, ShieldIcon, WonIcon } from "../icons";
 import { motion } from "framer-motion";
 import TextBox from "./TextBox";
 import TitleBox from "../TitleBox";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section3() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -14,7 +18,7 @@ export default function Section3() {
         <motion.div
           className="responsive-width flex flex-col"
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true, amount: 0.15 }}
         >
           <motion.div

@@ -13,41 +13,36 @@ import Section7 from "@/components/Section7";
 import Section8 from "@/components/Section8/Section8";
 import Section9 from "@/components/Section9/Section9";
 import TopBar from "@/components/TopBar/TopBar";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
+import { useSetRecoilState } from "recoil";
+import { isLoadedAtom } from "./atoms";
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const setIsLoaded = useSetRecoilState(isLoadedAtom);
 
   // 페이지가 새로고침 될 때 이전에 위치하던 곳의 애니메이션 자동재생 방지
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
       setIsLoaded(true);
-    }, 100);
+    }, 20);
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col w-screen items-center">
+    <div className="flex flex-col w-screen items-center">
       <TopBar />
       <MainBanner />
-      <div
-        className={`${
-          !isLoaded ? "hidden " : ""
-        }w-full flex flex-col items-center`}
-      >
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <Section10 />
-        <Footer />
-      </div>
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
+      <Section9 />
+      <Section10 />
+      <Footer />
     </div>
   );
 }

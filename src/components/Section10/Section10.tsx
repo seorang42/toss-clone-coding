@@ -1,8 +1,11 @@
-import Image from "next/image";
+import { useRecoilValue } from "recoil";
 import Card from "./Card";
 import { motion } from "framer-motion";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section10() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const cardList = [
     {
       title: "토스결제",
@@ -38,7 +41,7 @@ export default function Section10() {
   return (
     <motion.section
       initial="hidden"
-      whileInView="visible"
+      whileInView={isLoaded ? "visible" : ""}
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.5 }}
       className="w-full flex flex-col bg-black sm:pt-[100px] sm:pb-[250px] max-sm:pb-[100px]"

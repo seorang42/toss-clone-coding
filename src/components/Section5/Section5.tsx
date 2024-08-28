@@ -2,8 +2,12 @@ import { motion } from "framer-motion";
 import TitleBox from "../TitleBox";
 import Card from "./Card";
 import { useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section5() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -58,7 +62,7 @@ export default function Section5() {
         <motion.div
           className="responsive-width flex flex-col "
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true, amount: 0.08 }}
           transition={{ staggerChildren: 1 }}
         >

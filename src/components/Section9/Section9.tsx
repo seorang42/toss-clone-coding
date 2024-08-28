@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import TitleBox from "../TitleBox";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section9() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const [isScreenSm, setIsScreenSm] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -28,7 +32,7 @@ export default function Section9() {
       <div className="w-full max-w-[1140px] flex justify-center">
         <motion.div
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true, amount: 0.06 }}
           className="responsive-width"
         >

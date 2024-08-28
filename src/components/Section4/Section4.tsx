@@ -6,8 +6,12 @@ import ClickAnimation from "./ClickAnimation";
 import Possibility from "./Possibility";
 import Percent from "./Percent";
 import ProgressNoAnimation from "./ProgressNoAnimation";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section4() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const [counter, setCounter] = useState(0);
   const [progress, setProgress] = useState(0);
   const ref = useRef(null);
@@ -76,7 +80,7 @@ export default function Section4() {
         <motion.div
           ref={ref}
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true }}
           className="w-[92%] flex flex-col"
           transition={{ staggerChildren: 0.5 }}

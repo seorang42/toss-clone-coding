@@ -2,8 +2,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import TitleBox from "./TitleBox";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { isLoadedAtom } from "@/app/atoms";
 
 export default function Section2() {
+  const isLoaded = useRecoilValue(isLoadedAtom);
+
   const contentVariants = {
     hidden: { y: 60, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -42,7 +46,7 @@ export default function Section2() {
           ref={ref}
           className="responsive-width h-full relative max-sm:py-[100px]"
           initial="hidden"
-          whileInView="visible"
+          whileInView={isLoaded ? "visible" : ""}
           viewport={{ once: true, amount: 0.2 }}
           transition={{
             staggerChildren: 0.5,
