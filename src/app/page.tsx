@@ -22,8 +22,8 @@ export default function Home() {
   // 페이지가 새로고침 될 때 이전에 위치하던 곳의 애니메이션 자동재생 방지
   useEffect(() => {
     setTimeout(() => {
-      setIsLoaded(true);
       window.scrollTo(0, 0);
+      setIsLoaded(true);
     }, 100);
   }, []);
 
@@ -31,21 +31,23 @@ export default function Home() {
     <div ref={ref} className="flex flex-col w-screen items-center">
       <TopBar />
       <MainBanner />
-      {isLoaded && (
-        <>
-          <Section1 />
-          <Section2 />
-          <Section3 />
-          <Section4 />
-          <Section5 />
-          <Section6 />
-          <Section7 />
-          <Section8 />
-          <Section9 />
-          <Section10 />
-          <Footer />
-        </>
-      )}
+      <div
+        className={`${
+          !isLoaded ? "hidden " : ""
+        }w-full flex flex-col items-center`}
+      >
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+        <Section5 />
+        <Section6 />
+        <Section7 />
+        <Section8 />
+        <Section9 />
+        <Section10 />
+        <Footer />
+      </div>
     </div>
   );
 }
