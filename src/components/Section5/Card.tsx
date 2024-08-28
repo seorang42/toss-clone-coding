@@ -16,7 +16,7 @@ export default function Card({ img, title, content, variants }: ICard) {
         transition={{ delay: 1.3, duration: 0.5 }}
       >
         <Image
-          className="w-[120px] h-auto mb-[30px] max-sm:mb-[22px]"
+          className="w-[120px] max-sm:w-[80px] h-auto mb-[30px] max-sm:mb-[22px]"
           width={0}
           height={0}
           sizes="100vw"

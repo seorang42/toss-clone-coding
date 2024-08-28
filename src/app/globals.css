@@ -23,13 +23,12 @@
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   height: 100%;
-  overflow: auto;
-  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap
-    break-keep overflow-x-hidden;
+  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep;
 }
 
 @layer utilities {
