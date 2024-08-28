@@ -27,7 +27,9 @@ html {
 }
 
 body {
-  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap break-keep overflow-x-hidden;
+  height: 100%;
+  @apply font-pretendard text-toss-gray-900 whitespace-pre-wrap
+    break-keep;
 }
 
 @layer utilities {

@@ -24,7 +24,7 @@ export default function Home() {
     if (ref.current !== null) {
       setTimeout(() => {
         if (ref.current !== null) {
-          window.scrollTo({ top: ref.current?.clientTop });
+          window.scrollTo({ top: ref.current.clientTop });
           setIsLoaded(true);
         }
       }, 20);
