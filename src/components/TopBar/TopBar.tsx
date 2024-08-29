@@ -8,8 +8,19 @@ import { useEffect, useRef, useState } from "react";
 import { AppleLogoIcon, CloseIcon, GoogleLogoIcon, MenuIcon } from "../icons";
 import { useOutsideClick } from "@/app/hooks/useOutsideClick";
 import { TossLogoIcon } from "../TossLogoIcon";
+import { useRouter } from "next/navigation";
 
 export default function TopBar() {
+  // 모바일에서 접속했는지 확인
+  const [isMobile, setIsMobile] = useState<boolean>();
+  useEffect(() => {
+    if (navigator.userAgent !== undefined) {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    }
+  }, []);
+
+  const router = useRouter();
+
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -75,15 +86,27 @@ export default function TopBar() {
                   </a>
                 </section>
                 <div className="sm:hidden absolute top-4 right-5 flex gap-3 items-center">
-                  <motion.button
-                    ref={buttonRef}
-                    onClick={() => setIsBtnClicked((prev) => !prev)}
-                    whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
-                    transition={{ type: "tween", duration: 0.2 }}
-                    className="w-[76px] h-[30px] rounded-[15px] flex justify-center items-center text-[12px] text-white bg-toss-blue-1"
-                  >
-                    앱 다운로드
-                  </motion.button>
+                  {!isMobile ? (
+                    <motion.button
+                      ref={buttonRef}
+                      onClick={() => {
+                        if (isMobile) {
+                        } else setIsBtnClicked((prev) => !prev);
+                      }}
+                      whileHover={{ backgroundColor: "rgb(27, 100, 218)" }}
+                      transition={{ type: "tween", duration: 0.2 }}
+                      className="download-button"
+                    >
+                      앱 다운로드
+                    </motion.button>
+                  ) : (
+                    <a
+                      href="/"
+                      className="w-[76px] h-[30px] rounded-[15px] flex justify-center items-center text-[12px] text-white bg-toss-blue-1"
+                    >
+                      앱 다운로드
+                    </a>
+                  )}
                   <button
                     onClick={() => setIsMenuOpened((prev) => !prev)}
                     className="h-[26px] flex px-2 -mr-2 focus:bg-[#F3F4F5]"

@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { AppleLogoIcon, GoogleLogoIcon, ScrollIcon } from "@/components/icons";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function MainBanner() {
+  // 모바일에서 접속했는지 확인
+  const [isMobile, setIsMobile] = useState<boolean>();
+  useEffect(() => {
+    if (navigator.userAgent !== undefined) {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    }
+  }, []);
+
   return (
     <div
       className="w-full h-screen relative overflow-hidden"
@@ -29,26 +37,35 @@ export default function MainBanner() {
               {"금융의 모든 것\n토스에서\n쉽고 간편하게"}
             </span>
           </div>
-          <div className="flex gap-1 justify-center">
-            <motion.a
-              whileHover={{ backgroundColor: "#505967" }}
-              transition={{ type: "tween", duration: 0.2 }}
+          {!isMobile ? (
+            <div className="flex gap-1 justify-center">
+              <motion.a
+                whileHover={{ backgroundColor: "#505967" }}
+                transition={{ type: "tween", duration: 0.2 }}
+                href="/"
+                className="appstore-button"
+              >
+                <AppleLogoIcon />
+                App Store
+              </motion.a>
+              <motion.a
+                whileHover={{ backgroundColor: "#505967" }}
+                transition={{ type: "tween", duration: 0.2 }}
+                href="/"
+                className="appstore-button"
+              >
+                <GoogleLogoIcon />
+                Google Play
+              </motion.a>
+            </div>
+          ) : (
+            <a
               href="/"
-              className="appstore-button"
+              className="w-[120px] h-12 text-[16px] font-medium leading-[1.6] text-white rounded-[40px] flex justify-center items-center bg-toss-blue-1"
             >
-              <AppleLogoIcon />
-              App Store
-            </motion.a>
-            <motion.a
-              whileHover={{ backgroundColor: "#505967" }}
-              transition={{ type: "tween", duration: 0.2 }}
-              href="/"
-              className="appstore-button"
-            >
-              <GoogleLogoIcon />
-              Google Play
-            </motion.a>
-          </div>
+              앱 다운로드
+            </a>
+          )}
         </div>
       </motion.div>
       <div
