@@ -82,23 +82,23 @@ export default function Footer() {
   return (
     <div
       className="w-full bg-toss-gray-900
-     pt-[50px] max-sm:pt-[60px] pb-[100px] max-sm:pb-[80px] flex justify-center"
+     pt-[50px] max-footerSm:pt-[60px] pb-[100px] max-footerSm:pb-[80px] flex justify-center"
     >
-      <div className="w-full max-w-[1064px] px-[67px] flex flex-col max-sm:px-10">
-        <div className="w-full flex pb-[50px] max-sm:pb-[40px] max-sm:flex-col max-sm:gap-10">
+      <div className="w-full max-w-[1064px] px-[67px] flex flex-col max-footerSm:px-10">
+        <div className="w-full flex pb-[50px] max-footerSm:pb-[40px] max-footerSm:flex-col max-footerSm:gap-10">
           {menuList.map((el, index) => (
             <ul
               key={index}
-              className="w-full max-w-[170px] flex flex-col last:grow last:max-w-none max-sm:max-w-none"
+              className="footerSm:w-[170px] flex flex-col last:flex-1"
             >
-              <li className="w-full h-[35px] text-toss-gray-400 font-semibold text-[15px] flex items-center pb-[5px]">
+              <li className="w-full h-[35px] text-toss-gray-400 font-medium text-[15px] flex items-center pb-[5px]">
                 {el.title}
               </li>
               {el.list.map((el, index) => (
                 <a
                   key={index}
                   href="/"
-                  className="flex items-center w-full min-h-[30px] leading-[30px] text-[15px] text-toss-gray-600 hover:underline"
+                  className="flex items-center w-full min-h-[30px] leading-[30px] text-[15px] font-light text-toss-gray-600 hover:underline"
                 >
                   {el}
                 </a>
@@ -110,39 +110,42 @@ export default function Footer() {
           <span className="w-full h-9 text-toss-gray-400 font-semibold text-[15px]">
             ㈜비바리퍼블리카
           </span>
-          <div className="w-full flex flex-col text-[13px] text-toss-gray-500 ">
-            <span>사업자 등록번호 : 120-88-01280 | 대표 : 이승건</span>
-            <span>
-              호스팅 서비스 : 주식회사 비바리퍼블리카 | 통신판매업 신고번호 :
-              2014-서울강남-03377{" "}
-              <a href="/" className="hover:underline text-toss-gray-600">
-                사업자정보확인
-              </a>
-            </span>
-            <span>
-              06236 서울특별시 강남구 테헤란로 142, 4층, 10층, 11층, 12층, 13층,
-              22층, 23층 (역삼동, 아크플레이스)
-            </span>
-            <span>
-              고객센터 : 서울특별시 강남구 테헤란로 133, 9층 (역삼동,
-              한국타이어빌딩)
-            </span>
-          </div>
-        </div>
-        <div className="grid grid-cols-4 gap-[34px] gap-y-1 pt-6 pb-[31px] max-md:grid-cols-3 max-sm:grid-cols-1 max-sm:gap-y-[6px]">
-          {termsList.map((el, index) => (
-            <a
-              key={index}
-              href="/"
-              className={`w-fit text-[13px] hover:underline leading-[18px] ${
-                el.isBright ? "text-toss-gray-400" : "text-toss-gray-600"
-              }`}
-            >
-              {el.text}
+          <address className="w-full text-[13px] font-extralight not-italic text-toss-gray-500 leading-[20px]">
+            사업자 등록번호 : 120-88-01280 | 대표 : 이승건
+            <br />
+            호스팅 서비스 : 주식회사 비바리퍼블리카 | 통신판매업 신고번호 :
+            2014-서울강남-03377&nbsp;
+            <a href="/" className="hover:underline text-toss-gray-600">
+              사업자정보확인
             </a>
-          ))}
+            <br />
+            06236 서울특별시 강남구 테헤란로 142, 4층, 10층, 11층, 12층, 13층,
+            22층, 23층 (역삼동, 아크플레이스)
+            <br />
+            고객센터 : 서울특별시 강남구 테헤란로 133, 9층 (역삼동,
+            한국타이어빌딩)
+          </address>
         </div>
-        <div className="flex gap-2">
+        <ul className="footer-grid gap-x-[34px] gap-y-1 pt-6 max-footerSm:gap-y-[6px]">
+          {termsList.map((el, index) => (
+            <li
+              className="footerSm:w-fit text-[13px] hover:underline cursor-pointer"
+              key={index}
+            >
+              <a
+                className={`block max-footerSm:leading-[18px] footerSm:leading-[18.5px] font-light ${
+                  el.isBright
+                    ? "text-toss-gray-400"
+                    : "text-toss-gray-600 font-light"
+                }`}
+                href="/"
+              >
+                {el.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="flex items-center gap-2 pb-[2px] mt-[30px]">
           {snsList.map((el, index) => (
             <motion.a
               initial={{ opacity: 0.7 }}

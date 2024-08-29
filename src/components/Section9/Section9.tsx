@@ -113,7 +113,7 @@ export default function Section9() {
             >
               <div className="img-container">
                 <Image
-                  className="img"
+                  className="img rounded-3xl"
                   width={0}
                   height={0}
                   sizes="100vw"
