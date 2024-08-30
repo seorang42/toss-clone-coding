@@ -112,7 +112,7 @@ export default function Section4() {
             <div className="img-container">
               <AnimatePresence>
                 <motion.img
-                  className="img"
+                  className="inner-img"
                   key={counter}
                   src={imgUrl[counter]}
                   initial={{

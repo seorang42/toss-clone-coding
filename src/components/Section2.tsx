@@ -76,7 +76,7 @@ export default function Section2() {
             >
               <div className="img-container">
                 <Image
-                  className="img"
+                  className="inner-img"
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -88,7 +88,7 @@ export default function Section2() {
               <img
                 className="img"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
-                alt="img1-1"
+                alt="iphoneImg"
               />
             </motion.div>
             <motion.div
@@ -98,7 +98,7 @@ export default function Section2() {
             >
               <div className="img-container">
                 <Image
-                  className="img"
+                  className="inner-img"
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -110,7 +110,7 @@ export default function Section2() {
               <img
                 className="img"
                 src="https://static.toss.im/assets/homepage/newtossim/iPhone15_Clay_Shadow_03.png"
-                alt="img2-1"
+                alt="iphoneImg"
               />
             </motion.div>
           </motion.div>

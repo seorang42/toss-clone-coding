@@ -60,7 +60,7 @@ export default function Section6() {
           <div className="relative h-auto sm:w-[600px] max-sm:max-w-[375px] overflow-hidden">
             <div className="img-container">
               <Image
-                className="img"
+                className="inner-img"
                 width={0}
                 height={0}
                 sizes="100vw"
