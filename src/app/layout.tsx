@@ -16,6 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="fixed w-screen h-screen z-[99] flex flex-col gap-2 justify-center items-center text-3xl font-semibold text-gray-400 pointer-events-none">
+          <span>연습용 클론 코딩 웹 페이지입니다</span>
+          <span>정식 사이트가 아닙니다</span>
+        </div>
         <RecoilProvider>{children}</RecoilProvider>
       </body>
     </html>
